@@ -15,14 +15,18 @@ class TvKabelImport implements ToModel
     public function model(array $row)
     {
         return new TvKabel([
-           'nomor_pegawai'=>$row[1],
+            'idDataTvkabel'=>$row[0],
+            'nomor_pegawai'=>$row[1],
             'nama'=>$row[2],
             'nomor_hp'=>$row[3],
-            'pemakaian'=>$row[4],
-            'plafon'=>$row[5],
-            'roaming_ln'=>$row[6],
-            'beban_pegawai'=>$row[7],
-            'beban_perusahaan'=>$row[8],
+            'jenis_tv'=>$row[4],
+            'pemakaian'=>$row[5],
+            'plafon'=>$row[6],
+            'roaming_ln'=>$row[7],
+            'beban_pegawai'=>$row[8],
+            'beban_perusahaan'=>$row[9],
+            'tagihan'=>$row[10],
+            'tanggal'=>$row[11],
         ]);
     }
 }

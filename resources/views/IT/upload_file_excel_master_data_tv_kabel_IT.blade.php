@@ -15,7 +15,7 @@
 
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title" id="exampleModalLabel">Import Data Master Excel IT</h1>
+                                <h1 class="modal-title" id="exampleModalLabel">Import Data Master Excel Tv Kabel IT</h1>
                             </div>
 
                             <div class="modal-body">

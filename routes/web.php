@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PulsaController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\TvKabelController;
 
@@ -15,10 +16,13 @@ use App\Http\Controllers\TvKabelController;
 |
 */
 
-Route::get('/upload_file_excel_master_data_IT', function () {
-    return view('IT.upload_file_excel_master_data_IT');
+Route::get('/upload_file_excel_master_data_tv_kabel_IT', function () {
+    return view('IT.upload_file_excel_master_data_tv_kabel_IT');
 });
 
+Route::get('/upload_file_excel_master_data_pulsa_IT', function () {
+    return view('IT.upload_file_excel_master_data_pulsa_IT');
+});
 
 Route::get('/dashboard_IT', function () {
     return view('IT.dashboard_IT');
@@ -33,6 +37,13 @@ Route::get('/list_excel_tv_kabel_IT', function () {
 });
 
 
+
 Route::get('/master_data_tv_kabel_IT',[TvKabelController::class,'index']);
 Route::get('/master_data_tv_kabel_IT/export_excel',[TvKabelController::class,'export_excel']);
 Route::post('/master_data_tv_kabel_IT/import_excel', [TvKabelController::class,'import_excel']);
+
+
+Route::get('/master_data_pulsa_IT',[PulsaController::class,'index']);
+Route::get('/master_data_pulsa_IT/export_excel',[PulsaController::class,'export_excel']);
+Route::post('/master_data_pulsa_IT/import_excel', [PulsaController::class,'import_excel']);
+

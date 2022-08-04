@@ -17,7 +17,7 @@
                         <a href="/master_data_tv_kabel_IT/export_excel" ><button type="submit" class="btn btn-primary rounded-pill">Unduh</button></a>
                     </div>
                 </ul>
-        </div>
+
 
                 <table class="table table-borderless datatable">
                                     <thead>
@@ -26,40 +26,48 @@
                                         <th scope="col">Nomor Pegawai</th>
                                         <th scope="col">Nama</th>
                                         <th scope="col">No.Telepon</th>
+                                        <th scope="col">Jenis Tv </th>
                                         <th scope="col">Pemakaian</th>
                                         <th scope="col">Plafon</th>
                                         <th scope="col">Roaming LN</th>
                                         <th scope="col">Beban Pegawai</th>
                                         <th scope="col">Beban Perusahaan</th>
+                                        <th scope="col">Tagihan</th>
+                                        <th scope="col">Tanggal</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @php $i=1 @endphp
                                     @foreach($master_data_tv_kabel_IT as $s)
                                         <tr>
-                                            <td>{{ $i++ }}</td>
+                                            <td>{{$i++}}</td>
                                             <td>{{$s->nomor_pegawai}}</td>
-                                            <td>{{ $s->nama}}</td>
-                                            <td>{{ $s->nomor_hp}}</td>
+                                            <td>{{$s->nama}}</td>
+                                            <td>{{$s->nomor_hp}}</td>
+                                            <td>{{$s->jenis_tv}}</td>
                                             <td>{{$s->pemakaian}}</td>
                                             <td>{{$s->plafon}}</td>
                                             <td>{{$s->roaming_ln}}</td>
                                             <td>{{$s->beban_pegawai}}</td>
                                             <td>{{$s->beban_perusahaan}}</td>
+                                            <td>
+                                            @if($s->tagihan=='lunas')
+                                                <span class="badge bg-success">lunas</span>
+                                            @elseif($s->tagihan =='belum lunas')
+                                                <span class="badge bg-danger">belum lunas</span>
+                                            @endif
+                                            </td>
+                                            <td>{{$s->tanggal}}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>
                 </table>
 
                   <div class="text-right">
-                   <a href="/upload_file_excel_master_data_IT"> <button type="submit" class="btn btn-primary" data-toggle="modal">Import Data Excel </button></a></a>
+                   <a href="/upload_file_excel_master_data_tv_kabel_IT"> <button type="submit" class="btn btn-primary" data-toggle="modal">Import Data Excel </button></a></a>
                   </div>
-
-
-
-</div>
-
-
+    </div>
+    </div>
 </div><!-- End Recent Sales -->
 
 

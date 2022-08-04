@@ -5,16 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TvKabel extends Model
+class Pulsa extends Model
 {
-  protected $table = "tvkabels";
+     protected $table = "pulsas";
 
     protected $fillable = [
-    'idDataTvkabel',
+    'idDataPulsa',
     'nomor_pegawai',
     'nama',
     'nomor_hp',
-    'jenis_tv',
     'nomor_id',
     'pemakaian',
     'plafon',
