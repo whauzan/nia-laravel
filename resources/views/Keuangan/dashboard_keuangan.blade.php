@@ -3,7 +3,7 @@
 
 <head>
 
-@extends('layout.master')
+@extends('layout.master3')
 
 @section('content')
 
@@ -55,7 +55,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </section>
