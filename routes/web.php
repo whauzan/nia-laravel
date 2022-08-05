@@ -35,12 +35,18 @@ Route::get('/profil_IT', function () {
 Route::get('/list_excel_tv_kabel_IT', function () {
     return view('IT.list_excel_tv_kabel_IT');
 });
-
+Route::get('/list_excel_pulsa_IT', function () {
+    return view('IT.list_excel_pulsa_IT');
+});
 
 
 Route::get('/master_data_tv_kabel_IT',[TvKabelController::class,'index']);
 Route::get('/master_data_tv_kabel_IT/export_excel',[TvKabelController::class,'export_excel']);
 Route::post('/master_data_tv_kabel_IT/import_excel', [TvKabelController::class,'import_excel']);
+
+
+Route::get('/list_excel_tv_kabel_IT/export_template_excel',[TvKabelController::class,'export_template_excel']);
+Route::post('/list_excel_tv_kabel_IT/import_template_excel', [TvKabelController::class,'import_template_excel']);
 
 
 Route::get('/master_data_pulsa_IT',[PulsaController::class,'index']);

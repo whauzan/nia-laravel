@@ -7,9 +7,11 @@
             <h2 class="text-center">Database Master TV Kabel IT</h2>
             <ul>
             <div class="text-right">
-                    <button type="submit" class="btn btn-primary">Unduh Template</button>
-                    <button type="submit" class="btn btn-primary">Unggah Data</button>
+                  <a href="/list_excel_tv_kabel_IT/export_template_excel" ><button type="submit" class="btn btn-primary">Unduh Template</button></a>
+                   <a href="/list_excel_tv_kabel_IT/import_template_excel" ><button type="submit" class="btn btn-primary">Unggah Data</button></a>
                   </div>
+
+
             </ul>
               <!-- List group with Links and buttons -->
               <div class="list-group">
