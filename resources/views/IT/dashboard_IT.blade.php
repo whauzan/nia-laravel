@@ -26,7 +26,7 @@
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-collection"></i></div>
                                 <a href="/list_excel_pulsa_IT" class="fs-4 fw-bold">Master Data Pulsa</a>
                                 <ul>
-                                <span class="img-1 text-center"><img src="assets/pulsa.png" class="img-fluid my-4 " /></span>
+                                 <a href="/list_excel_pulsa_IT" class="fs-4 fw-bold"><span class="img-1 text-center"><img src="assets/pulsa.png" class="img-fluid my-4 " /></span></a>
                                </ul>
                                 <p class="mb-0">Kunjungi jika ingin mengunggah atau mengunduh data terkait fasilitas Pulsa</p>
                             </div>
@@ -41,7 +41,7 @@
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-cloud-download"></i></div>
                                 <a href="/list_excel_tv_kabel_IT" class="fs-4 fw-bold">Master Data TV Kabel</a>
                                 <ul>
-                                <span class="img-1 text-center"><img src="assets/tv1.png" class="img-fluid my-4 " /></span>
+                               <a href="/list_excel_tv_kabel_IT" class="fs-4 fw-bold"><span class="img-1 text-center"><img src="assets/tv1.png" class="img-fluid my-4 " /></span></a>
                                 </ul>
                                 <p class="mb-0">Kunjungi jika ingin mengunggah atau mengunduh data terkait fasilitas TV Kabel</p>
                             </div>

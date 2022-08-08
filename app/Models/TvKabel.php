@@ -15,7 +15,6 @@ class TvKabel extends Model
     'nama',
     'nomor_hp',
     'jenis_tv',
-    'nomor_id',
     'pemakaian',
     'plafon',
     'roaming_ln',

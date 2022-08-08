@@ -14,7 +14,6 @@ class Pulsa extends Model
     'nomor_pegawai',
     'nama',
     'nomor_hp',
-    'nomor_id',
     'pemakaian',
     'plafon',
     'roaming_ln',

@@ -7,8 +7,7 @@ use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithStartRow;
 
 
-class TvKabelImport implements ToModel ,  WithStartRow
-
+class TvKabelTemplateImport implements ToModel,  WithStartRow
 {
     /**
     * @param array $row
@@ -33,9 +32,8 @@ class TvKabelImport implements ToModel ,  WithStartRow
         ]);
     }
 
-public function startRow(): int
+   public function startRow(): int
      {
         return 2;
     }
-
 }

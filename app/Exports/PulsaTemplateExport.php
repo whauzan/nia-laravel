@@ -2,22 +2,23 @@
 
 namespace App\Exports;
 
-use App\Models\TvKabel;
+use App\Models\Pulsa;
 use Maatwebsite\Excel\Concerns\FromArray;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
-// class TVKabelTemplateExport implements FromCollection
+// class PulsaTemplateExport implements FromCollection
 // {
 //     /**
 //     * @return \Illuminate\Support\Collection
 //     */
 //     public function collection()
 //     {
-//          return TvKabel::all();
+//         return Pulsa::all();
 //     }
 // }
-class TVKabelTemplateExport implements FromArray, WithHeadings
+
+class PulsaTemplateExport implements FromArray, WithHeadings
 {
     /**
      * @return array
@@ -33,11 +34,11 @@ class TVKabelTemplateExport implements FromArray, WithHeadings
     public function headings(): array
     {
         return [
-            'idDataTvkabel',
+            'idDataPulsa',
             'nomor_pegawai',
             'nama',
             'nomor_hp',
-            'jenis_tv',
+            'nomor_id',
             'pemakaian',
             'plafon',
             'roaming_ln',

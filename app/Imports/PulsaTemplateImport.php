@@ -6,8 +6,7 @@ use App\Models\Pulsa;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithStartRow;
 
-class PulsaImport implements ToModel,WithStartRow
-
+class PulsaTemplateImport implements ToModel,WithStartRow
 {
     /**
     * @param array $row
@@ -17,7 +16,7 @@ class PulsaImport implements ToModel,WithStartRow
     public function model(array $row)
     {
         return new Pulsa([
-             'idDataTvkabel'=>$row[0],
+              'idDataTvkabel'=>$row[0],
             'nomor_pegawai'=>$row[1],
             'nama'=>$row[2],
             'nomor_hp'=>$row[3],
@@ -31,7 +30,7 @@ class PulsaImport implements ToModel,WithStartRow
         ]);
     }
 
-    public function startRow(): int
+      public function startRow(): int
      {
         return 2;
     }

@@ -1,5 +1,5 @@
 
-@extends('layout.master')
+@extends('layout.master3')
 
 @section('content')
 
@@ -102,8 +102,7 @@
 
               </div>
             </div><!-- End Recent Sales -->
-      
+
 
 @yield('content')
 @endsection
-                

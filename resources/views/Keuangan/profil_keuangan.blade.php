@@ -1,5 +1,5 @@
 
-@extends('layout.master')
+@extends('layout.master3')
 
 @section('content')
 
@@ -18,12 +18,12 @@
               class="rounded-circle img-fluid" style="width: 150px;">
             <h4 class="my-3">Admin KEUANGAN</h4>
             <p class="text-muted mb-1">
-              PERUM PERURI 
+              PERUM PERURI
             </p>
             <button type="submit" class="btn btn-primary">Edit</button>
           </div>
         </div>
-        
+
       </div>
       <div class="col-lg-8">
         <div class="card mb-4">
