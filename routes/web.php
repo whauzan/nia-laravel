@@ -6,6 +6,7 @@ use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\TvKabelController;
 use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\PAMKeuanganController;
+use App\Http\Controllers\KeuanganListrikController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,7 +62,6 @@ Route::get('/upload_file_excel_master_data_pulsa_keuangan', function () {
 
 
 
-
 Route::get('/dashboard_keuangan', function () {
     return view('Keuangan.dashboard_keuangan');
 });
@@ -101,6 +101,19 @@ Route::get('/upload_file_excel_master_data_pam_keuangan_Template', function () {
 
 
 
+Route::get('/list_excel_listrik_keuangan', function () {
+    return view('Keuangan.list_excel_listrik_keuangan');
+});
+
+
+
+Route::get('/upload_file_excel_master_data_listrik_keuangan', function () {
+    return view('Keuangan.upload_file_excel_master_data_listrik_keuangan');
+});
+
+Route::get('/upload_file_excel_master_data_listrik_keuangan_Template', function () {
+    return view('Keuangan.upload_file_excel_master_data_listrik_keuangan_Template');
+});
 
 
 
@@ -192,24 +205,24 @@ Route::get('/master_data_pam_keuangan/filter12',[PAMKeuanganController::class,'f
 Route::get('/list_excel_pam_keuangan/export_excel_template',[PAMKeuanganController::class,'export_excel_template']);
 
 
-Route::get('/master_data_litrik_keuangan',[ListrikKeuanganController::class,'index']);
-Route::get('/master_data_listrik_keuangan/export_excel',[ListrikKeuanganController::class,'export_excel']);
-Route::post('/master_data_listrik_keuangan/import_excel', [ListrikKeuanganController::class,'import_excel']);
+Route::get('/master_data_listrik_keuangan',[KeuanganListrikController::class,'index']);
+Route::get('/master_data_listrik_keuangan/export_excel',[KeuanganListrikController::class,'export_excel']);
+Route::post('/master_data_listrik_keuangan/import_excel', [KeuanganListrikController::class,'import_excel']);
 
 
-Route::get('/master_data_listrik_keuangan/filter',[ListrikKeuanganController::class,'filter']);
-Route::get('/master_data_listrik_keuangan/filter2',[ListrikKeuanganController::class,'filter2']);
-Route::get('/master_data_listrik_keuangan/filter3',[ListrikKeuanganController::class,'filter3']);
-Route::get('/master_data_listrik_keuangan/filter4',[ListrikKeuanganController::class,'filter4']);
-Route::get('/master_data_listrik_keuangan/filter5',[ListrikKeuanganController::class,'filter5']);
-Route::get('/master_data_listrik_keuangan/filter6',[ListrikKeuanganController::class,'filter6']);
-Route::get('/master_data_listrik_keuangan/filter7',[ListrikKeuanganController::class,'filter7']);
-Route::get('/master_data_listrik_keuangan/filter8',[ListrikKeuanganController::class,'filter8']);
-Route::get('/master_data_listrik_keuangan/filter9',[ListrikKeuanganController::class,'filter9']);
-Route::get('/master_data_listrik_keuangan/filter10',[ListrikKeuanganController::class,'filter10']);
-Route::get('/master_data_listrik_keuangan/filter11',[ListrikKeuanganController::class,'filter11']);
-Route::get('/master_data_listrik_keuangan/filter12',[ListrikKeuanganController::class,'filter12']);
+Route::get('/master_data_listrik_keuangan/filter',[KeuanganListrikController::class,'filter']);
+Route::get('/master_data_listrik_keuangan/filter2',[KeuanganListrikController::class,'filter2']);
+Route::get('/master_data_listrik_keuangan/filter3',[KeuanganListrikController::class,'filter3']);
+Route::get('/master_data_listrik_keuangan/filter4',[KeuanganListrikController::class,'filter4']);
+Route::get('/master_data_listrik_keuangan/filter5',[KeuanganListrikController::class,'filter5']);
+Route::get('/master_data_listrik_keuangan/filter6',[KeuanganListrikController::class,'filter6']);
+Route::get('/master_data_listrik_keuangan/filter7',[KeuanganListrikController::class,'filter7']);
+Route::get('/master_data_listrik_keuangan/filter8',[KeuanganListrikController::class,'filter8']);
+Route::get('/master_data_listrik_keuangan/filter9',[KeuanganListrikController::class,'filter9']);
+Route::get('/master_data_listrik_keuangan/filter10',[KeuanganListrikController::class,'filter10']);
+Route::get('/master_data_listrik_keuangan/filter11',[KeuanganListrikController::class,'filter11']);
+Route::get('/master_data_listrik_keuangan/filter12',[KeuanganListrikController::class,'filter12']);
 
 
-Route::get('/list_excel_listrik_keuangan/export_excel_template',[ListrikKeuanganController::class,'export_excel_template']);
+Route::get('/list_excel_listrik_keuangan/export_excel_template',[KeuanganListrikController::class,'export_excel_template']);
 

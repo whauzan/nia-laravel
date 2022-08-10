@@ -17,7 +17,7 @@
 <div>
 <ul>
   <div class="text-right">
-          <button type="submit" class="btn btn-primary rounded-pill">Unduh</button>
+    <a href="/master_data_listrik_keuangan/export_excel" ><button type="submit" class="btn btn-primary rounded-pill">Unduh</button></a>
   </div>
 </ul>
 </div>
@@ -36,20 +36,23 @@
                         <th scope="col">Plafon</th>
                         <th scope="col">Beban Pegawai</th>
                         <th scope="col">Beban Perusahaan</th>
-                        <th scope="col">Status</th>
+                        <th scope="col">Tagihan</th>
+                         <th scope="col">Tanggal</th>
                       </tr>
                     </thead>
                     <tbody>
                       @php $i=1 @endphp
-                                    @foreach($master_data_pulsa_IT as $s)
+                                    @foreach($master_data_listrik_keuangan as $s)
                                         <tr>
                                             <td>{{$i++}}</td>
                                             <td>{{$s->nomor_pegawai}}</td>
                                             <td>{{$s->nama}}</td>
-                                            <td>{{$s->nomor_hp}}</td>
+                                            <td>{{$s->alamat}}</td>
+                                            <td>{{$s->nomor_kontrol}}</td>
+                                            <td>{{$s->biaya_admin}}</td>
+                                            <td>{{$s->pemakaian_FG}}</td>
                                             <td>{{$s->pemakaian}}</td>
                                             <td>{{$s->plafon}}</td>
-                                            <td>{{$s->roaming_ln}}</td>
                                             <td>{{$s->beban_pegawai}}</td>
                                             <td>{{$s->beban_perusahaan}}</td>
                                             <td>
@@ -65,7 +68,7 @@
                     </tbody>
                   </table>
                   <div class="text-right">
-                    <button type="submit" class="btn btn-primary">Hapus</button>
+                   <a href="/upload_file_excel_master_data_listrik_keuangan"> <button type="submit" class="btn btn-primary" data-toggle="modal">Import Data Excel </button></a></a>
                   </div>
 
                 </div>
