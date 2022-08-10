@@ -40,48 +40,28 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row"><a href="#">#1</a></th>
-                        <td>4038</td>
-                        <td><a href="#" class="text-primary">Nia Madu</a></td>
-                        <td>Bandung</td>
-                        <td>1301194038</td>
-                        <td>500.000</td>
-                        <td>2000</td>
-                        <td>502.000</td>
-                        <td>600.000</td>
-                        <td>600.000</td>
-                        <td>600.000</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2147</a></th>
-                        <td>Bridie Kessler</td>
-                        <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
-                        <td>$47</td>
-                        <td><span class="badge bg-warning">Pending</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2049</a></th>
-                        <td>Ashleigh Langosh</td>
-                        <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
-                        <td>$147</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2644</a></th>
-                        <td>Angus Grady</td>
-                        <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
-                        <td>$67</td>
-                        <td><span class="badge bg-danger">Rejected</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2644</a></th>
-                        <td>Raheem Lehner</td>
-                        <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
-                        <td>$165</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
+                      @php $i=1 @endphp
+                                    @foreach($master_data_pulsa_IT as $s)
+                                        <tr>
+                                            <td>{{$i++}}</td>
+                                            <td>{{$s->nomor_pegawai}}</td>
+                                            <td>{{$s->nama}}</td>
+                                            <td>{{$s->nomor_hp}}</td>
+                                            <td>{{$s->pemakaian}}</td>
+                                            <td>{{$s->plafon}}</td>
+                                            <td>{{$s->roaming_ln}}</td>
+                                            <td>{{$s->beban_pegawai}}</td>
+                                            <td>{{$s->beban_perusahaan}}</td>
+                                            <td>
+                                            @if($s->tagihan=='lunas')
+                                                <span class="badge bg-success">lunas</span>
+                                            @elseif($s->tagihan =='belum lunas')
+                                                <span class="badge bg-danger">belum lunas</span>
+                                            @endif
+                                            </td>
+                                            <td>{{$s->tanggal}}</td>
+                                        </tr>
+                                    @endforeach
                     </tbody>
                   </table>
                   <div class="text-right">

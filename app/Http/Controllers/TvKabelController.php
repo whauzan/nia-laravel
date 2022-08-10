@@ -20,6 +20,8 @@ class TvKabelController extends Controller
 		return view('IT.master_data_tv_kabel_IT',['master_data_tv_kabel_IT'=>$tvkabel]);
 	}
 
+
+
 	public function export_excel()
 	{
 		return Excel::download(new TvKabelExport, 'tvkabel.xlsx');

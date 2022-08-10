@@ -16,7 +16,7 @@
 
 <ul>
 <div class="text-right">
-                    <button type="submit" class="btn btn-primary rounded-pill">Unduh</button>
+                <a href="/master_data_pulsa_keuangan/export_excel" ><button type="submit" class="btn btn-primary rounded-pill">Unduh</button></a>
                   </div>
 </ul>
 
@@ -32,71 +32,39 @@
                         <th scope="col">Roaming LN</th>
                         <th scope="col">Beban Pegawai</th>
                         <th scope="col">Beban Perusahaan</th>
+                        <th scope="col">Tagihan</th>
+                        <th scope="col">Tanggal/th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row"><a href="#">#1</a></th>
-                        <td>4038</td>
-                        <td><a href="#" class="text-primary">Nia Madu</a></td>
-                        <td>0895324870379</td>
-                        <td>150.000</td>
-                        <td>500.000</td>
-                        <td>2000</td>
-                        <td>502.000</td>
-                        <td>600.000</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#1</a></th>
-                        <td>4038</td>
-                        <td><a href="#" class="text-primary">Nia Madu</a></td>
-                        <td>0895324870379</td>
-                        <td>150.000</td>
-                        <td>500.000</td>
-                        <td>2000</td>
-                        <td>502.000</td>
-                        <td>600.000</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#1</a></th>
-                        <td>4038</td>
-                        <td><a href="#" class="text-primary">Nia Madu</a></td>
-                        <td>0895324870379</td>
-                        <td>150.000</td>
-                        <td>500.000</td>
-                        <td>2000</td>
-                        <td>502.000</td>
-                        <td>600.000</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#1</a></th>
-                        <td>4038</td>
-                        <td><a href="#" class="text-primary">Nia Madu</a></td>
-                        <td>0895324870379</td>
-                        <td>150.000</td>
-                        <td>500.000</td>
-                        <td>2000</td>
-                        <td>502.000</td>
-                        <td>600.000</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#1</a></th>
-                        <td>4038</td>
-                        <td><a href="#" class="text-primary">Nia Madu</a></td>
-                        <td>0895324870379</td>
-                        <td>150.000</td>
-                        <td>500.000</td>
-                        <td>2000</td>
-                        <td>502.000</td>
-                        <td>600.000</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
+                                 @php $i=1 @endphp
+                                    @foreach($master_data_pulsa_keuangan as $s)
+                                        <tr>
+                                            <td>{{$i++}}</td>
+                                            <td>{{$s->nomor_pegawai}}</td>
+                                            <td>{{$s->nama}}</td>
+                                            <td>{{$s->nomor_hp}}</td>
+                                            <td>{{$s->pemakaian}}</td>
+                                            <td>{{$s->plafon}}</td>
+                                            <td>{{$s->roaming_ln}}</td>
+                                            <td>{{$s->beban_pegawai}}</td>
+                                            <td>{{$s->beban_perusahaan}}</td>
+                                            <td>
+                                            @if($s->tagihan=='lunas')
+                                                <span class="badge bg-success">lunas</span>
+                                            @elseif($s->tagihan =='belum lunas')
+                                                <span class="badge bg-danger">belum lunas</span>
+                                            @endif
+                                            </td>
+                                            <td>{{$s->tanggal}}</td>
+                                        </tr>
+                                    @endforeach
                     </tbody>
                   </table>
+
+                   <div class="text-right">
+                   <a href="/upload_file_excel_master_data_pulsa_keuangan"> <button type="submit" class="btn btn-primary" data-toggle="modal">Import Data Excel </button></a></a>
+                  </div>
 
                 </div>
 

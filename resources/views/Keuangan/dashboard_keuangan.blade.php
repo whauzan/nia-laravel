@@ -29,8 +29,8 @@
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-collection"></i></div>
-                                <a href="mdlistrikkeuangan" class="fs-4 fw-bold">Master Data Listrik</a>
-								<span class="img-1 text-center"><img src="assets/listrik.png" class="img-fluid my-4 " /></span>
+                                <a href="list_excel_listrik_keuangan" class="fs-4 fw-bold">Master Data Listrik</a>
+								<a href="list_excel_listrik_keuangan" class="fs-4 fw-bold"><span class="img-1 text-center"><img src="assets/listrik.png" class="img-fluid my-4 " /></span></a>
                                 <p class="mb-0">Kunjungi jika ingin mengunggah atau mengunduh data terkait fasilitas Listrik</p>
                             </div>
                         </div>
@@ -39,8 +39,8 @@
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-cloud-download"></i></div>
-                                <a href="mdpamkeuangan" class="fs-4 fw-bold">Master Data TV PAM</a>
-								<span class="img-1 text-center"><img src="assets/air.png" class="img-fluid my-4 " /></span>
+                                <a href="list_excel_pam_keuangan" class="fs-4 fw-bold">Master Data TV PAM</a>
+								 <a href="list_excel_pam_keuangan" class="fs-4 fw-bold"><span class="img-1 text-center"><img src="assets/air.png" class="img-fluid my-4 " /></span></a>
                                 <p class="mb-0">Kunjungi jika ingin mengunggah atau mengunduh data terkait fasilitas PAM</p>
                             </div>
                         </div>
@@ -49,8 +49,8 @@
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-cloud-download"></i></div>
-                                <a href="mdpulsakeuangan" class="fs-4 fw-bold">Master Data Pulsa</a>
-								<span class="img-1 text-center"><img src="assets/pulsa.png" class="img-fluid my-4 " /></span>
+                                <a href="list_excel_pulsa_keuangan" class="fs-4 fw-bold">Master Data Pulsa</a>
+								 <a href="list_excel_pulsa_keuangan" class="fs-4 fw-bold"><span class="img-1 text-center"><img src="assets/pulsa.png" class="img-fluid my-4 " /></span></a>
                                 <p class="mb-0">Kunjungi jika ingin mengunggah atau mengunduh data terkait fasilitas Pulsa</p>
                             </div>
                         </div>

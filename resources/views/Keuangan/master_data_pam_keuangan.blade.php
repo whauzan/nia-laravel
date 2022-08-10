@@ -16,7 +16,7 @@
 
 <ul>
     <div class="text-right">
-      <button type="submit" class="btn btn-primary rounded-pill">Unduh</button>
+      <a href="/master_data_pam_keuangan/export_excel" ><button type="submit" class="btn btn-primary rounded-pill">Unduh</button></a>
     </div>
 </ul>
 
@@ -30,81 +30,37 @@
                         <th scope="col">No.Rek</th>
                         <th scope="col">Pemakaian</th>
                         <th scope="col">Plafon</th>
-                        <th scope="col">Beban Pegawai</th>
                         <th scope="col">Beban Perusahaan</th>
                         <th scope="col">Keterengan</th>
+                        <th scope="col">Tanggal</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row"><a href="#">#1</a></th>
-                        <td>4038</td>
-                        <td><a href="#" class="text-primary">Nia Madu</a></td>
-                        <td>Bandung</td>
-                        <td>1301194038</td>
-                        <td>500.000</td>
-                        <td>2000</td>
-                        <td>502.000</td>
-                        <td>600.000</td>
-                        <td>-</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#1</a></th>
-                        <td>4038</td>
-                        <td><a href="#" class="text-primary">Nia Madu</a></td>
-                        <td>Bandung</td>
-                        <td>1301194038</td>
-                        <td>500.000</td>
-                        <td>2000</td>
-                        <td>502.000</td>
-                        <td>600.000</td>
-                        <td>-</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#1</a></th>
-                        <td>4038</td>
-                        <td><a href="#" class="text-primary">Nia Madu</a></td>
-                        <td>Bandung</td>
-                        <td>1301194038</td>
-                        <td>500.000</td>
-                        <td>2000</td>
-                        <td>502.000</td>
-                        <td>600.000</td>
-                        <td>-</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#1</a></th>
-                        <td>4038</td>
-                        <td><a href="#" class="text-primary">Nia Madu</a></td>
-                        <td>Bandung</td>
-                        <td>1301194038</td>
-                        <td>500.000</td>
-                        <td>2000</td>
-                        <td>502.000</td>
-                        <td>600.000</td>
-                        <td>-</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#1</a></th>
-                        <td>4038</td>
-                        <td><a href="#" class="text-primary">Nia Madu</a></td>
-                        <td>Bandung</td>
-                        <td>1301194038</td>
-                        <td>500.000</td>
-                        <td>2000</td>
-                        <td>502.000</td>
-                        <td>600.000</td>
-                        <td>-</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
+                           @php $i=1 @endphp
+                                    @foreach($master_data_pam_keuangan as $s)
+                                        <tr>
+                                            <td>{{$i++}}</td>
+                                            <td>{{$s->nomor_pegawai}}</td>
+                                            <td>{{$s->nama}}</td>
+                                            <td>{{$s->alamat}}</td>
+                                            <td>{{$s->nomor_rekening}}</td>
+                                            <td>{{$s->pemakaian}}</td>
+                                            <td>{{$s->plafon}}</td>
+                                            <td>{{$s->beban_perusahaan}}</td>
+                                            <td>
+                                            @if($s->keterangan=='lunas')
+                                                <span class="badge bg-success">lunas</span>
+                                            @elseif($s->keterangan =='belum lunas')
+                                                <span class="badge bg-danger">belum lunas</span>
+                                            @endif
+                                            </td>
+                                           <td>{{$s->tanggal}}</td>
+                                        </tr>
+                                    @endforeach
                     </tbody>
                   </table>
                   <div class="text-right">
-                    <button type="submit" class="btn btn-primary">Hapus</button>
+                    <a href="/upload_file_excel_master_data_pam_keuangan"> <button type="submit" class="btn btn-primary" data-toggle="modal">Import Data Excel </button></a></a>
                   </div>
 
                 </div>

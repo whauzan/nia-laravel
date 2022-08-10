@@ -13,18 +13,18 @@
             </ul>
               <!-- List group with Links and buttons -->
               <div class="list-group">
-                  <a href="/master_data_pulsa_IT/filter" ><button type="button" class="list-group-item list-group-item-action">Database TV Kabel Bulan Januari 2022</button></a>
-               <a href="/master_data_pulsa_IT/filter2" > <button type="button" class="list-group-item list-group-item-action">Database TV Kabel Bulan Februari 2022</button></a>
-               <a href="/master_data_pulsa_IT/filter3" ><button type="button" class="list-group-item list-group-item-action">Database TV Kabel Bulan Maret 2022</button></a>
-               <a href="/master_data_pulsa_IT/filter4" > <button type="button" class="list-group-item list-group-item-action">Database TV Kabel Bulan April 2022</button></a>
-               <a href="/master_data_pulsa_IT/filter5" ><button type="button" class="list-group-item list-group-item-action">Database TV Kabel Bulan Mei 2022</button></a>
-               <a href="/master_data_pulsa_IT/filter6" > <button type="button" class="list-group-item list-group-item-action">Database TV Kabel Bulan Juni 2022</button></a>
-               <a href="/master_data_pulsa_IT/filter7" ><button type="button" class="list-group-item list-group-item-action">Database TV Kabel Bulan Juli 2022</button></a>
-               <a href="/master_data_pulsa_IT/filter8" > <button type="button" class="list-group-item list-group-item-action">Database TV Kabel Bulan Agustus 2022</button></a>
-               <a href="/master_data_pulsa_IT/filter9" ><button type="button" class="list-group-item list-group-item-action">Database TV Kabel Bulan September 2022</button></a>
-               <a href="/master_data_pulsa_IT/filter10" > <button type="button" class="list-group-item list-group-item-action">Database TV Kabel Bulan Oktober 2022</button></a>
-               <a href="/master_data_pulsa_IT/filter11" ><button type="button" class="list-group-item list-group-item-action">Database TV Kabel Bulan November 2022</button></a>
-               <a href="/master_data_pulsa_IT/filter12" > <button type="button" class="list-group-item list-group-item-action">Database TV Kabel Bulan Desember 2022</button></a>
+                  <a href="/master_data_pulsa_IT/filter" ><button type="button" class="list-group-item list-group-item-action">Database Pulsa Bulan Januari 2022</button></a>
+               <a href="/master_data_pulsa_IT/filter2" > <button type="button" class="list-group-item list-group-item-action">Database Pulsa Bulan Februari 2022</button></a>
+               <a href="/master_data_pulsa_IT/filter3" ><button type="button" class="list-group-item list-group-item-action">Database Pulsa Bulan Maret 2022</button></a>
+               <a href="/master_data_pulsa_IT/filter4" > <button type="button" class="list-group-item list-group-item-action">Database Pulsa Bulan April 2022</button></a>
+               <a href="/master_data_pulsa_IT/filter5" ><button type="button" class="list-group-item list-group-item-action">Database Pulsa Bulan Mei 2022</button></a>
+               <a href="/master_data_pulsa_IT/filter6" > <button type="button" class="list-group-item list-group-item-action">Database Pulsa Bulan Juni 2022</button></a>
+               <a href="/master_data_pulsa_IT/filter7" ><button type="button" class="list-group-item list-group-item-action">Database Pulsa Bulan Juli 2022</button></a>
+               <a href="/master_data_pulsa_IT/filter8" > <button type="button" class="list-group-item list-group-item-action">Database Pulsa Bulan Agustus 2022</button></a>
+               <a href="/master_data_pulsa_IT/filter9" ><button type="button" class="list-group-item list-group-item-action">Database Pulsa Bulan September 2022</button></a>
+               <a href="/master_data_pulsa_IT/filter10" > <button type="button" class="list-group-item list-group-item-action">Database Pulsa Bulan Oktober 2022</button></a>
+               <a href="/master_data_pulsa_IT/filter11" ><button type="button" class="list-group-item list-group-item-action">Database Pulsa Bulan November 2022</button></a>
+               <a href="/master_data_pulsa_IT/filter12" > <button type="button" class="list-group-item list-group-item-action">Database Pulsa Bulan Desember 2022</button></a>
               </div><!-- End List group with Links and buttons -->
 
             </div>
