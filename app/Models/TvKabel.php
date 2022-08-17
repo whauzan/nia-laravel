@@ -7,20 +7,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class TvKabel extends Model
 {
-  protected $table = "tvkabels";
+    protected $table = "tvkabels";
 
     protected $fillable = [
-    'idDataTvkabel',
-    'nomor_pegawai',
-    'nama',
-    'nomor_hp',
-    'jenis_tv',
-    'pemakaian',
-    'plafon',
-    'roaming_ln',
-    'beban_pegawai',
-    'beban_perusahaan',
-    'tagihan',
-    'tanggal'
+        'idDataTvkabel',
+        'nomor_pegawai',
+        'nama',
+        'no_hp',
+        'jenis_tv',
+        'pemakaian',
+        'plafon',
+        'roaming_ln',
+        'beban_pegawai',
+        'beban_perusahaan',
+        'tagihan',
+        'tanggal',
+        'is_verified',
     ];
+
+    protected $primaryKey = 'idDataTvkabel';
 }

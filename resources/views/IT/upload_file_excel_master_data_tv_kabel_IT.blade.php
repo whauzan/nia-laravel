@@ -11,11 +11,11 @@
 <div class="col-10">
     <div class="card">
 
-                     <form method="post" action="/master_data_tv_kabel_IT/import_excel" enctype="multipart/form-data">
+                     <form method="post" action="{{ route("upload_tv_IT") }}" enctype="multipart/form-data">
 
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title" id="exampleModalLabel">Import Data Master Excel Tv Kabel IT</h1>
+                                <h1 class="modal-title" id="exampleModalLabel">Import Data Master Excel TV Kabel IT</h1>
                             </div>
 
                             <div class="modal-body">

@@ -13,7 +13,7 @@ class TvKabelExport implements FromCollection , WithHeadings
     */
     public function collection()
     {
-        return TvKabel::all();
+        return TvKabel::where('is_verified', 1)->get();
     }
 
     public function headings() :array

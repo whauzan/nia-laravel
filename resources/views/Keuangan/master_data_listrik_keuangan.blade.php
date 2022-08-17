@@ -17,7 +17,7 @@
 <div>
 <ul>
   <div class="text-right">
-    <a href="/master_data_listrik_keuangan/export_excel" ><button type="submit" class="btn btn-primary rounded-pill">Unduh</button></a>
+    <a href="{{ route("export_excel_listrik_keuangan") }}" ><button type="submit" class="btn btn-primary rounded-pill">Unduh</button></a>
   </div>
 </ul>
 </div>
@@ -36,8 +36,8 @@
                         <th scope="col">Plafon</th>
                         <th scope="col">Beban Pegawai</th>
                         <th scope="col">Beban Perusahaan</th>
-                        <th scope="col">Tagihan</th>
-                         <th scope="col">Tanggal</th>
+                        <th scope="col">Keterangan</th>
+                        <th scope="col">Tanggal</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -49,26 +49,29 @@
                                             <td>{{$s->nama}}</td>
                                             <td>{{$s->alamat}}</td>
                                             <td>{{$s->nomor_kontrol}}</td>
+                                            <td>{{$s->pemakaian}}</td>
                                             <td>{{$s->biaya_admin}}</td>
                                             <td>{{$s->pemakaian_FG}}</td>
-                                            <td>{{$s->pemakaian}}</td>
                                             <td>{{$s->plafon}}</td>
                                             <td>{{$s->beban_pegawai}}</td>
                                             <td>{{$s->beban_perusahaan}}</td>
                                             <td>
-                                            @if($s->tagihan=='lunas')
+                                            @if($s->keterangan=='lunas')
                                                 <span class="badge bg-success">lunas</span>
-                                            @elseif($s->tagihan =='belum lunas')
+                                            @elseif($s->keterangan =='belum lunas')
                                                 <span class="badge bg-danger">belum lunas</span>
                                             @endif
                                             </td>
-                                            <td>{{$s->tanggal}}</td>
+                                            @php
+                                                $tanggal = date('d-m-Y', strtotime($s->tanggal));
+                                            @endphp
+                                           <td>{{$tanggal}}</td>
                                         </tr>
                                     @endforeach
                     </tbody>
                   </table>
                   <div class="text-right">
-                   <a href="/upload_file_excel_master_data_listrik_keuangan"> <button type="submit" class="btn btn-primary" data-toggle="modal">Import Data Excel </button></a></a>
+                   <a href="{{ route("import_listrik_keuangan") }}"> <button type="submit" class="btn btn-primary" data-toggle="modal">Import Data Excel </button></a></a>
                   </div>
 
                 </div>

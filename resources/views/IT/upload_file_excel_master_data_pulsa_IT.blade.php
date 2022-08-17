@@ -11,7 +11,7 @@
 <div class="col-10">
     <div class="card">
 
-                     <form method="post" action="/master_data_pulsa_IT/import_excel" enctype="multipart/form-data">
+                     <form method="post" action="{{ route("upload_pulsa_IT") }}" enctype="multipart/form-data">
 
                         <div class="modal-content">
                             <div class="modal-header">

@@ -16,7 +16,7 @@
 
 <ul>
 <div class="text-right">
-                <a href="/master_data_pulsa_keuangan/export_excel" ><button type="submit" class="btn btn-primary rounded-pill">Unduh</button></a>
+                <a href="{{ route("export_excel_pulsa_keuangan") }}" ><button type="submit" class="btn btn-primary rounded-pill">Unduh</button></a>
                   </div>
 </ul>
 
@@ -33,7 +33,7 @@
                         <th scope="col">Beban Pegawai</th>
                         <th scope="col">Beban Perusahaan</th>
                         <th scope="col">Tagihan</th>
-                        <th scope="col">Tanggal/th>
+                        <th scope="col">Tanggal</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -43,7 +43,7 @@
                                             <td>{{$i++}}</td>
                                             <td>{{$s->nomor_pegawai}}</td>
                                             <td>{{$s->nama}}</td>
-                                            <td>{{$s->nomor_hp}}</td>
+                                            <td>{{$s->no_hp}}</td>
                                             <td>{{$s->pemakaian}}</td>
                                             <td>{{$s->plafon}}</td>
                                             <td>{{$s->roaming_ln}}</td>
@@ -56,7 +56,10 @@
                                                 <span class="badge bg-danger">belum lunas</span>
                                             @endif
                                             </td>
-                                            <td>{{$s->tanggal}}</td>
+                                            @php
+                                                $tanggal = date('d-m-Y', strtotime($s->tanggal));
+                                            @endphp
+                                           <td>{{$tanggal}}</td>
                                         </tr>
                                     @endforeach
                     </tbody>

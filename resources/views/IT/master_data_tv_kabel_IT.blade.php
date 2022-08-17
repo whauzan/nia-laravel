@@ -14,7 +14,7 @@
             <h2 class="text-center">Master Data TV Kabel</h2>
                 <ul>
                     <div class="text-right">
-                        <a href="/master_data_tv_kabel_IT/export_excel" ><button type="submit" class="btn btn-primary rounded-pill">Unduh</button></a>
+                        <a href="{{ route("export_excel_tv_IT") }}" ><button type="submit" class="btn btn-primary rounded-pill">Unduh</button></a>
                     </div>
                 </ul>
 
@@ -43,7 +43,7 @@
                                             <td>{{$i++}}</td>
                                             <td>{{$s->nomor_pegawai}}</td>
                                             <td>{{$s->nama}}</td>
-                                            <td>{{$s->nomor_hp}}</td>
+                                            <td>{{$s->no_hp}}</td>
                                             <td>{{$s->jenis_tv}}</td>
                                             <td>{{$s->pemakaian}}</td>
                                             <td>{{$s->plafon}}</td>
@@ -57,14 +57,17 @@
                                                 <span class="badge bg-danger">belum lunas</span>
                                             @endif
                                             </td>
-                                            <td>{{$s->tanggal}}</td>
+                                            @php
+                                                $tanggal = date('d-m-Y', strtotime($s->tanggal));
+                                            @endphp
+                                           <td>{{$tanggal}}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>
                 </table>
 
                   <div class="text-right">
-                   <a href="/upload_file_excel_master_data_tv_kabel_IT"> <button type="submit" class="btn btn-primary" data-toggle="modal">Import Data Excel </button></a></a>
+                   <a href="{{ route("import_tv_IT") }}"> <button type="submit" class="btn btn-primary" data-toggle="modal">Import Data Excel </button></a></a>
                   </div>
     </div>
     </div>

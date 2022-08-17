@@ -124,7 +124,7 @@ public function filter7()
 
 public function filter8()
     {
-        $filter8 = PAM::whereMonth('tanggal', '=', date('08'))
+        $filter8 = PAM::whereMonth('created_at', date('08'))
                         ->get();
        return view('Keuangan.master_data_pam_keuangan',['master_data_pam_keuangan'=>$filter8]);
 
@@ -156,7 +156,7 @@ public function filter8()
 
   public function filter12()
     {
-        $filter12 = PAM::whereMonth('tanggal', '=', date('12'))
+        $filter12 = PAM::whereMonth('tanggal', '12')
                         ->get();
        return view('Keuangan.master_data_pam_keuangan',['master_data_pam_keuangan'=>$filter12]);
 

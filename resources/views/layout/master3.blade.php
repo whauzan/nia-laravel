@@ -20,16 +20,16 @@
         <div class="container-fluid">
         <div class="position-relative">
           <!-- <div class="row"> -->
-            <a href="dashboard_keuangan" class="probootstrap-logo">Versity<span>.</span></a>
+            <a href="{{ route("dashboard") }}" class="probootstrap-logo">Versity<span>.</span></a>
 
             <a href="#" class="probootstrap-burger-menu visible-xs" ><i>Menu</i></a>
             <div class="mobile-menu-overlay"></div>
 
             <nav role="navigation" class="probootstrap-nav hidden-xs">
               <ul class="probootstrap-main-nav">
-                <li><a href="dashboard_keuangan">Dashboard</a></li>
-                <li><a href="profil_keuangan">Profile</a></li>
-                <li><a href="/logout">Log Out</a></li>
+                <li><a href="{{ route("dashboard") }}">Dashboard</a></li>
+                <li><a href="{{ route("profil_keuangan") }}">Profile</a></li>
+                <li><a href="{{ route("logout") }}">Log Out</a></li>
               </ul>
           </nav>
 

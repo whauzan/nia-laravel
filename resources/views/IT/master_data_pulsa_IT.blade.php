@@ -17,7 +17,7 @@
 <ul>
 <div class="text-right">
                      <div class="text-right">
-                        <a href="/master_data_pulsa_IT/export_excel" ><button type="submit" class="btn btn-primary rounded-pill">Unduh</button></a>
+                        <a href="{{ route("export_excel_pulsa_IT") }}" ><button type="submit" class="btn btn-primary rounded-pill">Unduh</button></a>
                     </div>
                   </div>
 </ul>
@@ -45,7 +45,7 @@
                                             <td>{{$i++}}</td>
                                             <td>{{$s->nomor_pegawai}}</td>
                                             <td>{{$s->nama}}</td>
-                                            <td>{{$s->nomor_hp}}</td>
+                                            <td>{{$s->no_hp}}</td>
                                             <td>{{$s->pemakaian}}</td>
                                             <td>{{$s->plafon}}</td>
                                             <td>{{$s->roaming_ln}}</td>
@@ -58,14 +58,17 @@
                                                 <span class="badge bg-danger">belum lunas</span>
                                             @endif
                                             </td>
-                                            <td>{{$s->tanggal}}</td>
+                                            @php
+                                                $tanggal = date('d-m-Y', strtotime($s->tanggal));
+                                            @endphp
+                                           <td>{{$tanggal}}</td>
                                         </tr>
                                     @endforeach
                     </tbody>
                   </table>
 
                   <div class="text-right">
-                   <a href="/upload_file_excel_master_data_pulsa_IT"> <button type="submit" class="btn btn-primary" data-toggle="modal">Import Data Excel </button></a></a>
+                   <a href="{{ route("import_pulsa_IT") }}"> <button type="submit" class="btn btn-primary" data-toggle="modal">Import Data Excel </button></a></a>
                   </div>
 
                 </div>

@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ITController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PulsaController;
 use App\Http\Controllers\SiswaController;
@@ -7,6 +11,8 @@ use App\Http\Controllers\TvKabelController;
 use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\PAMKeuanganController;
 use App\Http\Controllers\KeuanganListrikController;
+use App\Http\Controllers\SDMController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,210 +25,128 @@ use App\Http\Controllers\KeuanganListrikController;
 |
 */
 
-Route::get('/upload_file_excel_master_data_tv_kabel_IT', function () {
-    return view('IT.upload_file_excel_master_data_tv_kabel_IT');
-});
-
-Route::get('/upload_file_excel_master_data_tv_kabel_IT_Template', function () {
-    return view('IT.upload_file_excel_master_data_tv_kabel_IT_Template');
-});
-
-
-Route::get('/upload_file_excel_master_data_pulsa_IT', function () {
-    return view('IT.upload_file_excel_master_data_pulsa_IT');
-});
-
-Route::get('/upload_file_excel_master_data_pulsa_IT_Template', function () {
-    return view('IT.upload_file_excel_master_data_pulsa_IT_Template');
-});
-
-
-Route::get('/dashboard_IT', function () {
-    return view('IT.dashboard_IT');
-});
-
-Route::get('/profil_IT', function () {
-    return view('IT.profil_IT');
-});
-
-Route::get('/list_excel_tv_kabel_IT', function () {
-    return view('IT.list_excel_tv_kabel_IT');
-});
-
-Route::get('/list_excel_pulsa_IT', function () {
-    return view('IT.list_excel_pulsa_IT');
-});
-
-
-
-
-Route::get('/upload_file_excel_master_data_pulsa_keuangan', function () {
-    return view('Keuangan.upload_file_excel_master_data_pulsa_keuangan');
-});
-
-
-
-Route::get('/dashboard_keuangan', function () {
-    return view('Keuangan.dashboard_keuangan');
-});
-
-Route::get('/profil_keuangan', function () {
-    return view('Keuangan.profil_keuangan');
-});
-
-
-Route::get('/list_excel_pulsa_keuangan', function () {
-    return view('Keuangan.list_excel_pulsa_keuangan');
-});
-
-
-Route::get('/upload_file_excel_master_data_pulsa_keuangan', function () {
-    return view('Keuangan.upload_file_excel_master_data_pulsa_keuangan');
-});
-
-Route::get('/upload_file_excel_master_data_pulsa_keuangan_Template', function () {
-    return view('Keuangan.upload_file_excel_master_data_pulsa_keuangan_Template');
-});
-
-
-
-Route::get('/list_excel_pam_keuangan', function () {
-    return view('Keuangan.list_excel_pam_keuangan');
-});
-
-
-Route::get('/upload_file_excel_master_data_pam_keuangan', function () {
-    return view('Keuangan.upload_file_excel_master_data_pam_keuangan');
-});
-
-Route::get('/upload_file_excel_master_data_pam_keuangan_Template', function () {
-    return view('Keuangan.upload_file_excel_master_data_pam_keuangan_Template');
-});
-
-
-
-Route::get('/list_excel_listrik_keuangan', function () {
-    return view('Keuangan.list_excel_listrik_keuangan');
-});
-
-
-
-Route::get('/upload_file_excel_master_data_listrik_keuangan', function () {
-    return view('Keuangan.upload_file_excel_master_data_listrik_keuangan');
-});
-
-Route::get('/upload_file_excel_master_data_listrik_keuangan_Template', function () {
-    return view('Keuangan.upload_file_excel_master_data_listrik_keuangan_Template');
-});
-
-
-
-
-Route::get('/master_data_tv_kabel_IT',[TvKabelController::class,'index']);
-Route::get('/master_data_tv_kabel_IT/export_excel',[TvKabelController::class,'export_excel']);
-Route::post('/master_data_tv_kabel_IT/import_excel', [TvKabelController::class,'import_excel']);
-
-
-Route::get('/master_data_tv_kabel_IT/filter',[TvKabelController::class,'filter']);
-Route::get('/master_data_tv_kabel_IT/filter2',[TvKabelController::class,'filter2']);
-Route::get('/master_data_tv_kabel_IT/filter3',[TvKabelController::class,'filter3']);
-Route::get('/master_data_tv_kabel_IT/filter4',[TvKabelController::class,'filter4']);
-Route::get('/master_data_tv_kabel_IT/filter5',[TvKabelController::class,'filter5']);
-Route::get('/master_data_tv_kabel_IT/filter6',[TvKabelController::class,'filter6']);
-Route::get('/master_data_tv_kabel_IT/filter7',[TvKabelController::class,'filter7']);
-Route::get('/master_data_tv_kabel_IT/filter8',[TvKabelController::class,'filter8']);
-Route::get('/master_data_tv_kabel_IT/filter9',[TvKabelController::class,'filter9']);
-Route::get('/master_data_tv_kabel_IT/filter10',[TvKabelController::class,'filter10']);
-Route::get('/master_data_tv_kabel_IT/filter11',[TvKabelController::class,'filter11']);
-Route::get('/master_data_tv_kabel_IT/filter12',[TvKabelController::class,'filter12']);
-
-
-Route::get('/list_excel_tv_kabel_IT/export_excel_template',[TvKabelController::class,'export_excel_template']);
-
-
-Route::get('/master_data_pulsa_IT',[PulsaController::class,'index']);
-Route::get('/master_data_pulsa_IT/export_excel',[PulsaController::class,'export_excel']);
-Route::post('/master_data_pulsa_IT/import_excel', [PulsaController::class,'import_excel']);
-
-Route::get('/master_data_pulsa_IT/filter',[PulsaController::class,'filter']);
-Route::get('/master_data_pulsa_IT/filter2',[PulsaController::class,'filter2']);
-Route::get('/master_data_pulsa_IT/filte3',[PulsaController::class,'filter3']);
-Route::get('/master_data_pulsa_IT/filte4',[PulsaController::class,'filter4']);
-Route::get('/master_data_pulsa_IT/filte5',[PulsaController::class,'filter5']);
-Route::get('/master_data_pulsa_IT/filte6',[PulsaController::class,'filter6']);
-Route::get('/master_data_pulsa_IT/filter7',[PulsaController::class,'filter7']);
-Route::get('/master_data_pulsa_IT/filter8',[PulsaController::class,'filter8']);
-Route::get('/master_data_pulsa_IT/filter9',[PulsaController::class,'filter9']);
-Route::get('/master_data_pulsa_IT/filter10',[PulsaController::class,'filter10']);
-Route::get('/master_data_pulsa_IT/filter11',[PulsaController::class,'filter11']);
-Route::get('/master_data_pulsa_IT/filter12',[PulsaController::class,'filter12']);
-
-Route::get('/list_excel_pulsa_IT/export_excel_template',[TvKabelController::class,'export_excel_template']);
-
-
-
-Route::get('/master_data_pulsa_keuangan',[KeuanganController::class,'index']);
-Route::get('/master_data_pulsa_keuangan/export_excel',[KeuanganController::class,'export_excel']);
-Route::post('/master_data_pulsa_keuangan/import_excel', [KeuanganController::class,'import_excel']);
-
-
-Route::get('/master_data_pulsa_keuangan/filter',[KeuanganController::class,'filter']);
-Route::get('/master_data_pulsa_keuangan/filter2',[KeuanganController::class,'filter2']);
-Route::get('/master_data_pulsa_keuangan/filter3',[KeuanganController::class,'filter3']);
-Route::get('/master_data_pulsa_keuangan/filter4',[KeuanganController::class,'filter4']);
-Route::get('/master_data_pulsa_keuangan/filter5',[KeuanganController::class,'filter5']);
-Route::get('/master_data_pulsa_keuangan/filter6',[KeuanganController::class,'filter6']);
-Route::get('/master_data_pulsa_keuangan/filter7',[KeuanganController::class,'filter7']);
-Route::get('/master_data_pulsa_keuangan/filter8',[KeuanganController::class,'filter8']);
-Route::get('/master_data_pulsa_keuangan/filter9',[KeuanganController::class,'filter9']);
-Route::get('/master_data_pulsa_keuangan/filter10',[KeuanganController::class,'filter10']);
-Route::get('/master_data_pulsa_keuangan/filter11',[KeuanganController::class,'filter11']);
-Route::get('/master_data_pulsa_keuangan/filter12',[KeuanganController::class,'filter12']);
-
-
-Route::get('/list_excel_pulsa_keuangan/export_excel_template',[KeuanganController::class,'export_excel_template']);
-
-
-Route::get('/master_data_pam_keuangan',[PAMKeuanganController::class,'index']);
-Route::get('/master_data_pam_keuangan/export_excel',[PAMKeuanganController::class,'export_excel']);
-Route::post('/master_data_pam_keuangan/import_excel', [PAMKeuanganController::class,'import_excel']);
-
-
-Route::get('/master_data_pam_keuangan/filter',[PAMKeuanganController::class,'filter']);
-Route::get('/master_data_pam_keuangan/filter2',[PAMKeuanganController::class,'filter2']);
-Route::get('/master_data_pam_keuangan/filter3',[PAMKeuanganController::class,'filter3']);
-Route::get('/master_data_pam_keuangan/filter4',[PAMKeuanganController::class,'filter4']);
-Route::get('/master_data_pam_keuangan/filter5',[PAMKeuanganController::class,'filter5']);
-Route::get('/master_data_pam_keuangan/filter6',[PAMKeuanganController::class,'filter6']);
-Route::get('/master_data_pam_keuangan/filter7',[PAMKeuanganController::class,'filter7']);
-Route::get('/master_data_pam_keuangan/filter8',[PAMKeuanganController::class,'filter8']);
-Route::get('/master_data_pam_keuangan/filter9',[PAMKeuanganController::class,'filter9']);
-Route::get('/master_data_pam_keuangan/filter10',[PAMKeuanganController::class,'filter10']);
-Route::get('/master_data_pam_keuangan/filter11',[PAMKeuanganController::class,'filter11']);
-Route::get('/master_data_pam_keuangan/filter12',[PAMKeuanganController::class,'filter12']);
-
-
-Route::get('/list_excel_pam_keuangan/export_excel_template',[PAMKeuanganController::class,'export_excel_template']);
-
-
-Route::get('/master_data_listrik_keuangan',[KeuanganListrikController::class,'index']);
-Route::get('/master_data_listrik_keuangan/export_excel',[KeuanganListrikController::class,'export_excel']);
-Route::post('/master_data_listrik_keuangan/import_excel', [KeuanganListrikController::class,'import_excel']);
-
-
-Route::get('/master_data_listrik_keuangan/filter',[KeuanganListrikController::class,'filter']);
-Route::get('/master_data_listrik_keuangan/filter2',[KeuanganListrikController::class,'filter2']);
-Route::get('/master_data_listrik_keuangan/filter3',[KeuanganListrikController::class,'filter3']);
-Route::get('/master_data_listrik_keuangan/filter4',[KeuanganListrikController::class,'filter4']);
-Route::get('/master_data_listrik_keuangan/filter5',[KeuanganListrikController::class,'filter5']);
-Route::get('/master_data_listrik_keuangan/filter6',[KeuanganListrikController::class,'filter6']);
-Route::get('/master_data_listrik_keuangan/filter7',[KeuanganListrikController::class,'filter7']);
-Route::get('/master_data_listrik_keuangan/filter8',[KeuanganListrikController::class,'filter8']);
-Route::get('/master_data_listrik_keuangan/filter9',[KeuanganListrikController::class,'filter9']);
-Route::get('/master_data_listrik_keuangan/filter10',[KeuanganListrikController::class,'filter10']);
-Route::get('/master_data_listrik_keuangan/filter11',[KeuanganListrikController::class,'filter11']);
-Route::get('/master_data_listrik_keuangan/filter12',[KeuanganListrikController::class,'filter12']);
-
-
-Route::get('/list_excel_listrik_keuangan/export_excel_template',[KeuanganListrikController::class,'export_excel_template']);
-
+Route::get('/', [HomeController::class, 'index'])->name('dashboard');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Auth::routes();
+
+Route::prefix('sdm')
+    ->namespace('')
+    ->middleware(['auth', 'adminsdm'])
+    ->group(function(){
+        Route::get('/profil', [SDMController::class, 'profil'])->name('profil_sdm');
+        
+        Route::get('/master-data', [SDMController::class, 'masterdata'])->name('master_data');
+        Route::get('/list-excel-internet', [SDMController::class, 'listInternet'])->name('list_excel_internet_sdm');
+        Route::get('/list-excel-internet/{filter}', [SDMController::class, 'filterInternet'])->name('filter_list_excel_internet_sdm');
+        Route::get('/import-data-internet', [SDMController::class, 'importInternet'])->name('import_internet_sdm');
+        Route::post('/upload-data-internet', [SDMController::class, 'uploadInternet'])->name('upload_internet_sdm');
+        Route::get('/export-excel-internet', [SDMController::class, 'exportInternet'])->name('export_excel_internet_sdm');
+        Route::get('/export-excel-internet-template', [SDMController::class, 'exportInternetTemplate'])->name('export_excel_internet_template_sdm');
+        
+        Route::get('/list-excel-listrik', [SDMController::class, 'listListrik'])->name('list_excel_listrik_sdm');
+        Route::get('/list-excel-listrik/{filter}', [SDMController::class, 'filterListrik'])->name('filter_list_excel_listrik_sdm');
+        Route::get('/import-data-listrik', [SDMController::class, 'importListrik'])->name('import_listrik_sdm');
+        Route::post('/upload-data-listrik', [SDMController::class, 'uploadListrik'])->name('upload_listrik_sdm');
+        Route::get('/export-excel-listrik', [SDMController::class, 'exportListrik'])->name('export_excel_listrik_sdm');
+        Route::get('/export-excel-listrik-template', [SDMController::class, 'exportListrikTemplate'])->name('export_excel_listrik_template_sdm');
+        
+        Route::get('/list-excel-pam', [SDMController::class, 'listPam'])->name('list_excel_pam_sdm');
+        Route::get('/list-excel-pam/{filter}', [SDMController::class, 'filterPam'])->name('filter_list_excel_pam_sdm');
+        Route::get('/import-data-pam', [SDMController::class, 'importPam'])->name('import_pam_sdm');
+        Route::post('/upload-data-pam', [SDMController::class, 'uploadPam'])->name('upload_pam_sdm');
+        Route::get('/export-excel-pam', [SDMController::class, 'exportPam'])->name('export_excel_pam_sdm');
+        Route::get('/export-excel-pam-template', [SDMController::class, 'exportPamTemplate'])->name('export_excel_pam_template_sdm');
+        
+        Route::get('/list-excel-pulsa', [SDMController::class, 'listPulsa'])->name('list_excel_pulsa_sdm');
+        Route::get('/list-excel-pulsa/{filter}', [SDMController::class, 'filterPulsa'])->name('filter_list_excel_pulsa_sdm');
+        Route::get('/import-data-pulsa', [SDMController::class, 'importPulsa'])->name('import_pulsa_sdm');
+        Route::post('/upload-data-pulsa', [SDMController::class, 'uploadPulsa'])->name('upload_pulsa_sdm');
+        Route::get('/export-excel-pulsa', [SDMController::class, 'exportPulsa'])->name('export_excel_pulsa_sdm');
+        Route::get('/export-excel-pulsa-template', [SDMController::class, 'exportPulsaTemplate'])->name('export_excel_pulsa_template_sdm');
+        
+        Route::get('/list-excel-tv', [SDMController::class, 'listTVKabel'])->name('list_excel_tv_sdm');
+        Route::get('/list-excel-tv/{filter}', [SDMController::class, 'filterTVKabel'])->name('filter_list_excel_tv_sdm');
+        Route::get('/import-data-tv', [SDMController::class, 'importTVKabel'])->name('import_tv_sdm');
+        Route::post('/upload-data-tv', [SDMController::class, 'uploadTVKabel'])->name('upload_tv_sdm');
+        Route::get('/export-excel-tv', [SDMController::class, 'exportTVKabel'])->name('export_excel_tv_sdm');
+        Route::get('/export-excel-tv-template', [SDMController::class, 'exportTVKabelTemplate'])->name('export_excel_tv_template_sdm');
+
+        Route::get('/verifikasi', [SDMController::class, 'verifikasi'])->name('verifikasi_sdm');
+        Route::get('/verifikasi/internet', [SDMController::class, 'verifikasiInternet'])->name('verifikasi_internet_sdm');
+        Route::get('verifikasi/internet/confirm', [SDMController::class, 'verifikasiInternetConfirm'])->name('verifikasi_internet_confirm_sdm');
+        Route::get('/verifikasi/listrik', [SDMController::class, 'verifikasiListrik'])->name('verifikasi_listrik_sdm');
+        Route::get('verifikasi/listrik/confirm', [SDMController::class, 'verifikasiListrikConfirm'])->name('verifikasi_listrik_confirm_sdm');
+        Route::get('/verifikasi/pam', [SDMController::class, 'verifikasiPam'])->name('verifikasi_pam_sdm');
+        Route::get('verifikasi/pam/confirm', [SDMController::class, 'verifikasiPamConfirm'])->name('verifikasi_pam_confirm_sdm');
+        Route::get('/verifikasi/pulsa', [SDMController::class, 'verifikasiPulsa'])->name('verifikasi_pulsa_sdm');
+        Route::get('verifikasi/pulsa/confirm', [SDMController::class, 'verifikasiPulsaConfirm'])->name('verifikasi_pulsa_confirm_sdm');
+        Route::get('/verifikasi/tv', [SDMController::class, 'verifikasiTVKabel'])->name('verifikasi_tv_sdm');
+        Route::get('verifikasi/tv/confirm', [SDMController::class, 'verifikasiTVKabelConfirm'])->name('verifikasi_tv_confirm_sdm');
+
+        Route::get('/internet/edit/{id}', [SDMController::class, 'InternetEdit'])->name('internet_edit_sdm');
+        Route::get('/internet/edit/confirm', [SDMController::class, 'InternetEditConfirm'])->name('internet_edit_confirm_sdm');
+        Route::get('/listrik/edit/{id}', [SDMController::class, 'ListrikEdit'])->name('listrik_edit_sdm');
+        Route::get('/listrik/edit/confirm', [SDMController::class, 'ListrikEditConfirm'])->name('listrik_edit_confirm_sdm');
+        Route::get('/pam/edit/{id}', [SDMController::class, 'PamEdit'])->name('pam_edit_sdm');
+        Route::get('/pam/edit/confirm', [SDMController::class, 'PamEditConfirm'])->name('pam_edit_confirm_sdm');
+        Route::get('/pulsa/edit/{id}', [SDMController::class, 'PulsaEdit'])->name('pulsa_edit_sdm');
+        Route::get('/pulsa/edit/confirm', [SDMController::class, 'PulsaEditConfirm'])->name('pulsa_edit_confirm_sdm');
+        Route::get('/tv/edit/{id}', [SDMController::class, 'TVKabelEdit'])->name('tv_edit_sdm');
+        Route::get('/tv/edit/confirm', [SDMController::class, 'TVKabelEditConfirm'])->name('tv_edit_confirm_sdm');
+        
+        Route::get('/internet/delete/{id}', [SDMController::class, 'InternetDelete'])->name('internet_delete_sdm');
+        Route::get('/listrik/delete/{id}', [SDMController::class, 'ListrikDelete'])->name('listrik_delete_sdm');
+        Route::get('/pam/delete/{id}', [SDMController::class, 'PamDelete'])->name('pam_delete_sdm');
+        Route::get('/pulsa/delete/{id}', [SDMController::class, 'PulsaDelete'])->name('pulsa_delete_sdm');
+        Route::get('/tv/delete/{id}', [SDMController::class, 'TVKabelDelete'])->name('tv_delete_sdm');
+    });
+
+Route::prefix('it')
+    ->namespace('')
+    ->middleware(['auth', 'adminit'])
+    ->group(function(){
+        Route::get('/profil', [ITController::class, 'profilIT'])->name('profil_IT');
+        
+        Route::get('/list-excel-pulsa', [ITController::class, 'listPulsa'])->name('list_excel_pulsa_IT');
+        Route::get('/list-excel-pulsa/{filter}', [ITController::class, 'filterPulsa'])->name('filter_list_excel_pulsa_IT');
+        Route::get('/import-data-pulsa', [ITController::class, 'importPulsa'])->name('import_pulsa_IT');
+        Route::post('/upload-data-pulsa', [ITController::class, 'uploadPulsa'])->name('upload_pulsa_IT');
+        Route::get('/export-excel-pulsa', [ITController::class, 'exportPulsa'])->name('export_excel_pulsa_IT');
+        Route::get('/export-excel-pulsa-template', [ITController::class, 'exportPulsaTemplate'])->name('export_excel_pulsa_template_IT');
+        
+        Route::get('/list-excel-tv', [ITController::class, 'listTVKabel'])->name('list_excel_tv_IT');
+        Route::get('/list-excel-tv/{filter}', [ITController::class, 'filterTVKabel'])->name('filter_list_excel_tv_IT');
+        Route::get('/import-data-tv', [ITController::class, 'importTVKabel'])->name('import_tv_IT');
+        Route::post('/upload-data-tv', [ITController::class, 'uploadTVKabel'])->name('upload_tv_IT');
+        Route::get('/export-excel-tv', [ITController::class, 'exportTVKabel'])->name('export_excel_tv_IT');
+        Route::get('/export-excel-tv-template', [ITController::class, 'exportTVKabelTemplate'])->name('export_excel_tv_template_IT');
+    });
+
+Route::prefix('keuangan')
+    ->namespace('')
+    ->middleware(['auth', 'adminkeuangan'])
+    ->group(function(){
+        Route::get('/profil', [KeuanganController::class, 'profilKeuangan'])->name('profil_keuangan');
+        
+        Route::get('/list-excel-listrik', [KeuanganController::class, 'listListrik'])->name('list_excel_listrik_keuangan');
+        Route::get('/list-excel-listrik/{filter}', [KeuanganController::class, 'filterListrik'])->name('filter_list_excel_listrik_keuangan');
+        Route::get('/import-data-listrik', [KeuanganController::class, 'importListrik'])->name('import_listrik_keuangan');
+        Route::post('/upload-data-listrik', [KeuanganController::class, 'uploadListrik'])->name('upload_listrik_keuangan');
+        Route::get('/export-excel-listrik', [KeuanganController::class, 'exportListrik'])->name('export_excel_listrik_keuangan');
+        Route::get('/export-excel-listrik-template', [KeuanganController::class, 'exportListrikTemplate'])->name('export_excel_listrik_template_keuangan');
+        
+        Route::get('/list-excel-pam', [KeuanganController::class, 'listPam'])->name('list_excel_pam_keuangan');
+        Route::get('/list-excel-pam/{filter}', [KeuanganController::class, 'filterPam'])->name('filter_list_excel_pam_keuangan');
+        Route::get('/import-data-pam', [KeuanganController::class, 'importPam'])->name('import_pam_keuangan');
+        Route::post('/upload-data-pam', [KeuanganController::class, 'uploadPam'])->name('upload_pam_keuangan');
+        Route::get('/export-excel-pam', [KeuanganController::class, 'exportPam'])->name('export_excel_pam_keuangan');
+        Route::get('/export-excel-pam-template', [KeuanganController::class, 'exportPamTemplate'])->name('export_excel_pam_template_keuangan');
+        
+        Route::get('/list-excel-pulsa', [KeuanganController::class, 'listPulsa'])->name('list_excel_pulsa_keuangan');
+        Route::get('/list-excel-pulsa/{filter}', [KeuanganController::class, 'filterPulsa'])->name('filter_list_excel_pulsa_keuangan');
+        Route::get('/import-data-pulsa', [KeuanganController::class, 'importPulsa'])->name('import_pulsa_keuangan');
+        Route::post('/upload-data-pulsa', [KeuanganController::class, 'uploadPulsa'])->name('upload_pulsa_keuangan');
+        Route::get('/export-excel-pulsa', [KeuanganController::class, 'exportPulsa'])->name('export_excel_pulsa_keuangan');
+        Route::get('/export-excel-pulsa-template', [KeuanganController::class, 'exportPulsaTemplate'])->name('export_excel_pulsa_template_keuangan');
+    });

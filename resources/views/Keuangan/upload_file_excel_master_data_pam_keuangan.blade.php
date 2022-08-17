@@ -11,11 +11,11 @@
 <div class="col-10">
     <div class="card">
 
-                     <form method="post" action="/master_data_pam_keuangan/import_excel" enctype="multipart/form-data">
+                     <form method="post" action="{{ route("upload_pam_keuangan") }}" enctype="multipart/form-data">
 
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title" id="exampleModalLabel">Import Data Master Excel Pulsa IT</h1>
+                                <h1 class="modal-title" id="exampleModalLabel">Import Data Master Excel PAM Keuangan</h1>
                             </div>
 
                             <div class="modal-body">

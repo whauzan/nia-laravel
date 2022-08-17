@@ -13,7 +13,7 @@ class PulsaExport implements FromCollection,  WithHeadings
     */
     public function collection()
     {
-        return Pulsa::all();
+        return Pulsa::where('is_verified', 1)->get();
     }
 
      public function headings(): array

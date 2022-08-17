@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PAM extends Model
 {
-   protected $table = "pams";
+    protected $table = "pams";
 
     protected $fillable = [
         'idDataPam',
@@ -19,6 +19,9 @@ class PAM extends Model
         'plafon',
         'beban_perusahaan',
         'keterangan',
-        'tanggal'
+        'tanggal',
+        'is_verified',
     ];
+
+    protected $primaryKey = 'idDataPam';
 }

@@ -9,6 +9,7 @@ use App\Exports\KeuanganListrikExport;
 use App\Imports\KeuanganListrikImport;
 use Illuminate\Support\Facades\Session;
 use App\Exports\KeuanganListrikExportTemplate;
+use App\Exports\ListrikExport;
 
 class KeuanganListrikController extends Controller
 {
@@ -20,7 +21,7 @@ class KeuanganListrikController extends Controller
 
 	public function export_excel()
 	{
-		return Excel::download(new KeuanganListrikExport, 'listrik_keuangan.xlsx');
+		return Excel::download(new ListrikExport, 'listrik_keuangan.xlsx'); 
 	}
 
 
