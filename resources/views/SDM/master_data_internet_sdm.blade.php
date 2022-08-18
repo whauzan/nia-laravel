@@ -17,6 +17,7 @@
 <div>
 <ul>
   <div class="text-right">
+    <a href="{{ route("add_internet_sdm") }}" ><button type="submit" class="btn btn-primary rounded-pill">Tambah</button></a>
     <a href="{{ route("export_excel_internet_sdm") }}" ><button type="submit" class="btn btn-primary rounded-pill">Unduh</button></a>
   </div>
 </ul>

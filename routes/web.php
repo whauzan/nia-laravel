@@ -35,6 +35,17 @@ Route::prefix('sdm')
     ->middleware(['auth', 'adminsdm'])
     ->group(function(){
         Route::get('/profil', [SDMController::class, 'profil'])->name('profil_sdm');
+
+        Route::get('/internet/add', [SDMController::class, 'addInternet'])->name('add_internet_sdm');
+        Route::post('/internet/add/confirm', [SDMController::class, 'confirmAddInternet'])->name('confirm_add_internet_sdm');
+        Route::get('/listrik/add', [SDMController::class, 'addListrik'])->name('add_listrik_sdm');
+        Route::post('/listrik/add/confirm', [SDMController::class, 'confirmAddListrik'])->name('confirm_add_listrik_sdm');
+        Route::get('/pam/add', [SDMController::class, 'addPAM'])->name('add_pam_sdm');
+        Route::post('/pam/add/confirm', [SDMController::class, 'confirmAddPAM'])->name('confirm_add_pam_sdm');
+        Route::get('/pulsa/add', [SDMController::class, 'addPulsa'])->name('add_pulsa_sdm');
+        Route::post('/pulsa/add/confirm', [SDMController::class, 'confirmAddPulsa'])->name('confirm_add_pulsa_sdm');
+        Route::get('/tv/add', [SDMController::class, 'addTvKabel'])->name('add_tv_sdm');
+        Route::post('/tv/add/confirm', [SDMController::class, 'confirmAddTvKabel'])->name('confirm_add_tv_sdm');
         
         Route::get('/master-data', [SDMController::class, 'masterdata'])->name('master_data');
         Route::get('/list-excel-internet', [SDMController::class, 'listInternet'])->name('list_excel_internet_sdm');

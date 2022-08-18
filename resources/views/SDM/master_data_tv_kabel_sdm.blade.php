@@ -14,6 +14,7 @@
             <h2 class="text-center">Master Data TV Kabel</h2>
                 <ul>
                     <div class="text-right">
+                        <a href="{{ route("add_tv_sdm") }}" ><button type="submit" class="btn btn-primary rounded-pill">Tambah</button></a>
                         <a href="{{ route("export_excel_tv_sdm") }}" ><button type="submit" class="btn btn-primary rounded-pill">Unduh</button></a>
                     </div>
                 </ul>

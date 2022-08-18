@@ -33,6 +33,51 @@ class SDMController extends Controller
         return view('SDM.master_data');
     }
 
+    public function addInternet() {
+        return view('SDM.internet_add');
+    }
+
+    public function confirmAddInternet(Request $request) {
+        Internet::create($request->toArray());
+        return redirect()->route('list_excel_internet_sdm');
+    }
+
+    public function addListrik() {
+        return view('SDM.listrik_add');
+    }
+
+    public function confirmAddListrik(Request $request) {
+        Listrik::create($request->toArray());
+        return redirect()->route('list_excel_listrik_sdm');
+    }
+
+    public function addPAM() {
+        return view('SDM.pam_add');
+    }
+
+    public function confirmAddPAM(Request $request) {
+        PAM::create($request->toArray());
+        return redirect()->route('list_excel_pam_sdm');
+    }
+
+    public function addPulsa() {
+        return view('SDM.pulsa_add');
+    }
+
+    public function confirmAddPulsa(Request $request) {
+        Pulsa::create($request->toArray());
+        return redirect()->route('list_excel_pulsa_sdm');
+    }
+
+    public function addTvKabel() {
+        return view('SDM.tv_kabel_add');
+    }
+
+    public function confirmAddTvKabel(Request $request) {
+        TvKabel::create($request->toArray());
+        return redirect()->route('list_excel_tv_sdm');
+    }
+
     public function listInternet() {
         return view('SDM.list_excel_internet_sdm');
     }
