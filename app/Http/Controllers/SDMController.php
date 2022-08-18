@@ -457,4 +457,34 @@ class SDMController extends Controller
         ]);
         return redirect()->route('verifikasi_tv_sdm');
     }
+
+    public function InternetDelete($id) {
+        $internet = Internet::where('idDataInternet', $id)->first();
+        $internet->delete();
+        return redirect()->route('verifikasi_internet_sdm');
+    }
+
+    public function ListrikDelete($id) {
+        $listrik = Listrik::where('idDataListrik', $id)->first();
+        $listrik->delete();
+        return redirect()->route('verifikasi_listrik_sdm');
+    }
+
+    public function PAMDelete($id) {
+        $pam = PAM::where('idDataPam', $id)->first();
+        $pam->delete();
+        return redirect()->route('verifikasi_pam_sdm');
+    }
+
+    public function PulsaDelete($id) {
+        $pulsa = Pulsa::where('idDataPulsa', $id)->first();
+        $pulsa->delete();
+        return redirect()->route('verifikasi_pulsa_sdm');
+    }
+
+    public function TVKabelDelete($id) {
+        $tv_kabel = TvKabel::where('idDataTvkabel', $id)->first();
+        $tv_kabel->delete();
+        return redirect()->route('verifikasi_tv_sdm');
+    }
 }

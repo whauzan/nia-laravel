@@ -30,6 +30,7 @@
                                         <th scope="col">Beban Perusahaan</th>
                                         <th scope="col">Tagihan</th>
                                         <th scope="col">Tanggal</th>
+                                        <th></th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -57,6 +58,7 @@
                                                 $tanggal = date('d-m-Y', strtotime($s->tanggal));
                                             @endphp
                                            <td>{{$tanggal}}</td>
+                                           <td><a href="{{ route("tv_delete_sdm", $s->idDataTvkabel) }}" class="btn btn-primary">Hapus</a></td>
                                         </tr>
                                     @endforeach
                                     </tbody>
