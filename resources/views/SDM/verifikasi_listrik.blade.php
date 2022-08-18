@@ -37,7 +37,7 @@
                       @php $i=1 @endphp
                                     @foreach($verifikasi_data_listrik_sdm as $s)
                                         <tr>
-                                            <td>{{$i++}}</td>
+                                            <td><a href="{{ route("listrik_edit_sdm", $s->idDataListrik) }}">{{$i++}}</a></td>
                                             <td>{{$s->nomor_pegawai}}</td>
                                             <td>{{$s->nama}}</td>
                                             <td>{{$s->alamat}}</td>

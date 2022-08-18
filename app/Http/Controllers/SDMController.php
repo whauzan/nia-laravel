@@ -249,7 +249,7 @@ class SDMController extends Controller
         // notifikasi dengan session
         Session::flash('sukses','Master Data TV Kabel Berhasil Diimport!');
         // alihkan halaman kembali
-        return redirect()->route('list_excel_tv_kabel_sdm');
+        return redirect()->route('list_excel_tv_sdm');
     }
 
     public function exportInternetTemplate() {
@@ -351,5 +351,110 @@ class SDMController extends Controller
         return view('SDM.internet_edit', [
             'data_internet_sdm' => $internet
         ]);
+    }
+
+    public function InternetEditConfirm(Request $request) {
+        $internet = Internet::where('idDataInternet', $request->idDataInternet)->first();
+        $internet->update([
+            'nomor_hp' => $request->nomor_hp,
+            'pemakaian' => $request->pemakaian,
+            'biaya_admin' => $request->biaya_admin,
+            'total' => $request->total,
+        ]);
+        return redirect()->route('verifikasi_internet_sdm');
+    }
+
+    public function ListrikEdit($id) {
+        $listrik = Listrik::where('idDataListrik', $id)->first();
+        return view('SDM.listrik_edit', [
+            'data_listrik_sdm' => $listrik
+        ]);
+    }
+
+    public function ListrikEditConfirm(Request $request) {
+        $listrik = Listrik::where('idDataListrik', $request->idDataListrik)->first();
+        $listrik->update([
+            'nomor_pegawai' => $request->nomor_pegawai,
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'nomor_kontrol' => $request->nomor_kontrol,
+            'pemakaian' => $request->pemakaian,
+            'biaya_admin' => $request->biaya_admin,
+            'pemakaian_FG' => $request->pemakaian_FG,
+            'plafon' => $request->plafon,
+            'beban_pegawai' => $request->beban_pegawai,
+            'beban_perusahaan' => $request->beban_perusahaan,
+            'keterangan' => $request->keterangan,
+        ]);
+        return redirect()->route('verifikasi_listrik_sdm');
+    }
+
+    public function PAMEdit($id) {
+        $pam = PAM::where('idDataPAM', $id)->first();
+        return view('SDM.pam_edit', [
+            'data_pam_sdm' => $pam
+        ]);
+    }
+
+    public function PAMEditConfirm(Request $request) {
+        $pam = PAM::where('idDataPam', $request->idDataPam)->first();
+        $pam->update([
+            'nomor_pegawai' => $request->nomor_pegawai,
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'nomor_rekening' => $request->nomor_rekening,
+            'pemakaian' => $request->pemakaian,
+            'plafon' => $request->plafon,
+            'beban_perusahaan' => $request->beban_perusahaan,
+            'keterangan' => $request->keterangan,
+        ]);
+        return redirect()->route('verifikasi_pam_sdm');
+    }
+
+    public function PulsaEdit($id) {
+        $pulsa = Pulsa::where('idDataPulsa', $id)->first();
+        return view('SDM.pulsa_edit', [
+            'data_pulsa_sdm' => $pulsa
+        ]);
+    }
+
+    public function PulsaEditConfirm(Request $request) {
+        $pulsa = Pulsa::where('idDataPulsa', $request->idDataPulsa)->first();
+        $pulsa->update([
+            'nomor_pegawai' => $request->nomor_pegawai,
+            'nama' => $request->nama,
+            'no_hp' => $request->no_hp,
+            'pemakaian' => $request->pemakaian,
+            'plafon' => $request->plafon,
+            'roaming_ln' => $request->roaming_ln,
+            'beban_pegawai' => $request->beban_pegawai,
+            'beban_perusahaan' => $request->beban_perusahaan,
+            'tagihan' => $request->tagihan,
+        ]);
+        return redirect()->route('verifikasi_pulsa_sdm');
+    }
+
+    public function TVKabelEdit($id) {
+        $tv_kabel = TvKabel::where('idDataTvkabel', $id)->first();
+        return view('SDM.tv_kabel_edit', [
+            'data_tv_kabel_sdm' => $tv_kabel
+        ]);
+    }
+
+    public function TVKabelEditConfirm(Request $request) {
+        $tv_kabel = TvKabel::where('idDataTvkabel', $request->idDataTvkabel)->first();
+        $tv_kabel->update([
+            'nomor_pegawai' => $request->nomor_pegawai,
+            'nama' => $request->nama,
+            'no_hp' => $request->no_hp,
+            'jenis_tv' => $request->jenis_tv,
+            'pemakaian' => $request->pemakaian,
+            'plafon' => $request->plafon,
+            'roaming_ln' => $request->roaming_ln,
+            'beban_pegawai' => $request->beban_pegawai,
+            'beban_perusahaan' => $request->beban_perusahaan,
+            'tagihan' => $request->tagihan,
+        ]);
+        return redirect()->route('verifikasi_tv_sdm');
     }
 }

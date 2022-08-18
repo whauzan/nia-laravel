@@ -36,7 +36,7 @@
                                     @php $i=1 @endphp
                                     @foreach($verifikasi_data_tv_kabel_sdm as $s)
                                         <tr>
-                                            <td>{{$i++}}</td>
+                                            <td><a href="{{ route("tv_edit_sdm", $s->idDataTvkabel) }}">{{$i++}}</a></td>
                                             <td>{{$s->nomor_pegawai}}</td>
                                             <td>{{$s->nama}}</td>
                                             <td>{{$s->no_hp}}</td>

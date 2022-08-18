@@ -35,7 +35,7 @@
                                  @php $i=1 @endphp
                                     @foreach($verifikasi_data_pulsa_sdm as $s)
                                         <tr>
-                                            <td>{{$i++}}</td>
+                                            <td><a href="{{ route("pulsa_edit_sdm", $s->idDataPulsa) }}">{{$i++}}</a></td>
                                             <td>{{$s->nomor_pegawai}}</td>
                                             <td>{{$s->nama}}</td>
                                             <td>{{$s->no_hp}}</td>

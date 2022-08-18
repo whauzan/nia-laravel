@@ -30,7 +30,7 @@
                       @php $i=1 @endphp
                                     @foreach($verifikasi_data_internet_sdm as $s)
                                       <tr>
-                                        <td><a href="{{ route("verifikasi_internet_edit_sdm", $s->idDataInternet) }}">{{$i++}}</a></td>
+                                        <td><a href="{{ route("internet_edit_sdm", $s->idDataInternet) }}">{{$i++}}</a></td>
                                         <td>{{$s->nomor_hp}}</td>
                                         <td>{{$s->pemakaian}}</td>
                                         <td>{{$s->biaya_admin}}</td>

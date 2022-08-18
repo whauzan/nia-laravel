@@ -85,15 +85,15 @@ Route::prefix('sdm')
         Route::get('verifikasi/tv/confirm', [SDMController::class, 'verifikasiTVKabelConfirm'])->name('verifikasi_tv_confirm_sdm');
 
         Route::get('/internet/edit/{id}', [SDMController::class, 'InternetEdit'])->name('internet_edit_sdm');
-        Route::get('/internet/edit/confirm', [SDMController::class, 'InternetEditConfirm'])->name('internet_edit_confirm_sdm');
+        Route::post('/internet/edit/confirm', [SDMController::class, 'InternetEditConfirm'])->name('internet_edit_confirm_sdm');
         Route::get('/listrik/edit/{id}', [SDMController::class, 'ListrikEdit'])->name('listrik_edit_sdm');
-        Route::get('/listrik/edit/confirm', [SDMController::class, 'ListrikEditConfirm'])->name('listrik_edit_confirm_sdm');
+        Route::post('/listrik/edit/confirm', [SDMController::class, 'ListrikEditConfirm'])->name('listrik_edit_confirm_sdm');
         Route::get('/pam/edit/{id}', [SDMController::class, 'PamEdit'])->name('pam_edit_sdm');
-        Route::get('/pam/edit/confirm', [SDMController::class, 'PamEditConfirm'])->name('pam_edit_confirm_sdm');
+        Route::post('/pam/edit/confirm', [SDMController::class, 'PamEditConfirm'])->name('pam_edit_confirm_sdm');
         Route::get('/pulsa/edit/{id}', [SDMController::class, 'PulsaEdit'])->name('pulsa_edit_sdm');
-        Route::get('/pulsa/edit/confirm', [SDMController::class, 'PulsaEditConfirm'])->name('pulsa_edit_confirm_sdm');
+        Route::post('/pulsa/edit/confirm', [SDMController::class, 'PulsaEditConfirm'])->name('pulsa_edit_confirm_sdm');
         Route::get('/tv/edit/{id}', [SDMController::class, 'TVKabelEdit'])->name('tv_edit_sdm');
-        Route::get('/tv/edit/confirm', [SDMController::class, 'TVKabelEditConfirm'])->name('tv_edit_confirm_sdm');
+        Route::post('/tv/edit/confirm', [SDMController::class, 'TVKabelEditConfirm'])->name('tv_edit_confirm_sdm');
         
         Route::get('/internet/delete/{id}', [SDMController::class, 'InternetDelete'])->name('internet_delete_sdm');
         Route::get('/listrik/delete/{id}', [SDMController::class, 'ListrikDelete'])->name('listrik_delete_sdm');

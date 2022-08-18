@@ -14,22 +14,24 @@
     <h2 class="text-center">Edit Internet</h2>
 
     <!-- Vertical Form -->
-    <form class="row g-3">
+    <form class="row g-3" method="POST" action="{{ route("internet_edit_confirm_sdm") }}" enctype="multipart/form-data">
+        @csrf
+        <input type="hidden" name="idDataInternet" value="{{ request()->segment(4) }}">
       <div class="col-12">
         <label for="inputNanme4" class="form-label">Nomor HP</label>
-        <input type="text" class="form-control" id="inputNanme4">
+        <input type="text" class="form-control" id="inputNanme4" name="nomor_hp" value="{{ $data_internet_sdm->nomor_hp }}">
       </div>
       <div class="col-12">
         <label for="inputEmail4" class="form-label">Pemakaian</label>
-        <input type="email" class="form-control" id="inputEmail4">
+        <input type="text" class="form-control" id="inputEmail4" name="pemakaian" value="{{ $data_internet_sdm->pemakaian }}">
       </div>
       <div class="col-12">
         <label for="inputPassword4" class="form-label">Biaya Admin</label>
-        <input type="password" class="form-control" id="inputPassword4">
+        <input type="text" class="form-control" id="inputPassword4" name="biaya_admin" value="{{ $data_internet_sdm->biaya_admin }}">
       </div>
       <div class="col-12">
         <label for="inputAddress" class="form-label">Total</label>
-        <input type="text" class="form-control" id="inputAddress" >
+        <input type="text" class="form-control" id="inputAddress" name="total" value="{{ $data_internet_sdm->total }}">
       </div>
       <div class="text-center">
         <button type="submit" class="btn btn-primary">Simpan</button>
