@@ -66,7 +66,7 @@
                   </table>
 
                    <div class="text-right">
-                   <a href="/upload_file_excel_master_data_pulsa_keuangan"> <button type="submit" class="btn btn-primary" data-toggle="modal">Import Data Excel </button></a></a>
+                   <a href="{{ route("import_pulsa_keuangan") }}"> <button type="submit" class="btn btn-primary" data-toggle="modal">Import Data Excel </button></a></a>
                   </div>
 
                 </div>

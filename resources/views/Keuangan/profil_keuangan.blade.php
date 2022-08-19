@@ -16,11 +16,11 @@
           <div class="card-body text-center">
             <img src="assets/profile.png" alt=""
               class="rounded-circle img-fluid" style="width: 150px;">
-            <h4 class="my-3">Admin KEUANGAN</h4>
+            <h4 class="my-3">Admin Keuangan</h4>
             <p class="text-muted mb-1">
               PERUM PERURI
             </p>
-            <button type="submit" class="btn btn-primary">Edit</button>
+            <a href="{{ route("profil_keuangan_edit") }}" type="submit" class="btn btn-primary">Edit</a>
           </div>
         </div>
 
@@ -33,7 +33,7 @@
                 <p class="mb-0">Full Name</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">Admin SDM</p>
+                <p class="text-muted mb-0">Admin Keuangan</p>
               </div>
             </div>
             <hr>
@@ -42,7 +42,7 @@
                 <p class="mb-0">Nomor Pegawai</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">1301194038</p>
+                <p class="text-muted mb-0">{{ $user->id }}</p>
               </div>
             </div>
             <hr>
@@ -51,18 +51,18 @@
                 <p class="mb-0">Username</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">adminsdm</p>
+                <p class="text-muted mb-0">{{ $user->name }}</p>
               </div>
             </div>
             <hr>
-            <div class="row">
+            {{-- <div class="row">
               <div class="col-sm-3">
                 <p class="mb-0">Password</p>
               </div>
               <div class="col-sm-9">
                 <p class="text-muted mb-0">peruri123</p>
               </div>
-            </div>
+            </div> --}}
             <hr>
           </div>
         </div>

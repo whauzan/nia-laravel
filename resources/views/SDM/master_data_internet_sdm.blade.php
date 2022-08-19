@@ -32,6 +32,7 @@
                         <th scope="col">Biaya Admin</th>
                         <th scope="col">Total</th>
                         <th scope="col">Tanggal</th>
+                        <th></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -47,6 +48,7 @@
                                                 $tanggal = date('d-m-Y', strtotime($s->tanggal));
                                             @endphp
                                            <td>{{$tanggal}}</td>
+                                           <td><a href="{{ route("internet_delete_sdm", $s->idDataInternet) }}" class="btn btn-primary">Hapus</a></td>
                                         </tr>
                                     @endforeach
                     </tbody>

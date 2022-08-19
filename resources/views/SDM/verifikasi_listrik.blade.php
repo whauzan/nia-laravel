@@ -8,7 +8,7 @@
       <div class="row">
       <div class="d-flex justify-content-center">
 
-<div class="col-8">
+<div class="col-9">
 <div class="card">
   <div class="card-body">
     <h2 class="text-center">Verifikasi Internet</h2>

@@ -22,7 +22,9 @@ use App\Models\Listrik;
 use App\Models\PAM;
 use App\Models\Pulsa;
 use App\Models\TvKabel;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use Maatwebsite\Excel\Facades\Excel;
 use Ramsey\Uuid\Type\Integer;
@@ -99,39 +101,57 @@ class SDMController extends Controller
     }
 
     public function profil() {
-        return view('SDM.profil_sdm');
+        $user = auth()->user();
+        return view('SDM.profil_sdm', [
+            'user' => $user
+        ]);
     }
 
-    public function filterInternet() {
-        $internet = Internet::where('is_verified', 1)->get();
+    public function editProfil() {
+        $user = auth()->user();
+        return view('SDM.profile_edit', [
+            'user' => $user
+        ]);
+    }
+
+    public function updateProfil(Request $request) {
+        $user = User::where('id', $request->oldId)->first();
+        $user->name = $request->name;
+        $user->id = $request->id;
+        $user->save();
+        return redirect()->route('profil_sdm');
+    }
+
+    public function filterInternet($filter) {
+        $internet = Internet::where('is_verified', 1)->whereMonth('tanggal', $filter)->get();
         return view('SDM.master_data_internet_sdm', [
             'master_data_internet_sdm' => $internet
         ]);
     }
 
-    public function filterListrik() {
-        $listrik = Listrik::where('is_verified', 1)->get();
+    public function filterListrik($filter) {
+        $listrik = Listrik::where('is_verified', 1)->whereMonth('tanggal', $filter)->get();
         return view('SDM.master_data_listrik_sdm', [
             'master_data_listrik_sdm' => $listrik
         ]);
     }
 
-    public function filterPam() {
-        $pam = PAM::where('is_verified', 1)->get();
+    public function filterPam($filter) {
+        $pam = PAM::where('is_verified', 1)->whereMonth('tanggal', $filter)->get();
         return view('SDM.master_data_pam_sdm', [
             'master_data_pam_sdm' => $pam
         ]);
     }
 
-    public function filterPulsa() {
-        $pulsa = Pulsa::where('is_verified', 1)->get();
+    public function filterPulsa($filter) {
+        $pulsa = Pulsa::where('is_verified', 1)->whereMonth('tanggal', $filter)->get();
         return view('SDM.master_data_pulsa_sdm', [
             'master_data_pulsa_sdm' => $pulsa
         ]);
     }
 
-    public function filterTVKabel() {
-        $tvkabel = TvKabel::where('is_verified', 1)->get();
+    public function filterTVKabel($filter) {
+        $tvkabel = TvKabel::where('is_verified', 1)->whereMonth('tanggal', $filter)->get();
         return view('SDM.master_data_tv_kabel_sdm', [
             'master_data_tv_kabel_sdm' => $tvkabel
         ]);
@@ -506,30 +526,58 @@ class SDMController extends Controller
     public function InternetDelete($id) {
         $internet = Internet::where('idDataInternet', $id)->first();
         $internet->delete();
-        return redirect()->route('verifikasi_internet_sdm');
+        $previousRoute = app('router')->getRoutes(url()->previous())->match(app('request')->create(url()->previous()))->getName();
+        if ($previousRoute == 'verifikasi_internet_sdm') {
+            return redirect()->route('verifikasi_internet_sdm');
+        } else if($previousRoute == 'filter_list_excel_internet_sdm') {
+            return redirect()->route('list_excel_internet_sdm');
+        }
     }
 
     public function ListrikDelete($id) {
         $listrik = Listrik::where('idDataListrik', $id)->first();
         $listrik->delete();
-        return redirect()->route('verifikasi_listrik_sdm');
+        $previousRoute = app('router')->getRoutes(url()->previous())->match(app('request')->create(url()->previous()))->getName();
+        if ($previousRoute == 'verifikasi_listrik_sdm') {
+            return redirect()->route('verifikasi_listrik_sdm');
+        } else if($previousRoute == 'filter_list_excel_listrik_sdm') {
+            return redirect()->route('list_excel_listrik_sdm');
+        }
     }
 
     public function PAMDelete($id) {
         $pam = PAM::where('idDataPam', $id)->first();
         $pam->delete();
+        $previousRoute = app('router')->getRoutes(url()->previous())->match(app('request')->create(url()->previous()))->getName();
+        if ($previousRoute == 'verifikasi_pam_sdm') {
+            return redirect()->route('verifikasi_pam_sdm');
+        } else if($previousRoute == 'filter_list_excel_pam_sdm') {
+            return redirect()->route('list_excel_pam_sdm');
+        }
         return redirect()->route('verifikasi_pam_sdm');
     }
 
     public function PulsaDelete($id) {
         $pulsa = Pulsa::where('idDataPulsa', $id)->first();
         $pulsa->delete();
+        $previousRoute = app('router')->getRoutes(url()->previous())->match(app('request')->create(url()->previous()))->getName();
+        if ($previousRoute == 'verifikasi_pulsa_sdm') {
+            return redirect()->route('verifikasi_pulsa_sdm');
+        } else if($previousRoute == 'filter_list_excel_pulsa_sdm') {
+            return redirect()->route('list_excel_pulsa_sdm');
+        }
         return redirect()->route('verifikasi_pulsa_sdm');
     }
 
     public function TVKabelDelete($id) {
         $tv_kabel = TvKabel::where('idDataTvkabel', $id)->first();
         $tv_kabel->delete();
+        $previousRoute = app('router')->getRoutes(url()->previous())->match(app('request')->create(url()->previous()))->getName();
+        if ($previousRoute == 'verifikasi_tv_sdm') {
+            return redirect()->route('verifikasi_tv_sdm');
+        } else if($previousRoute == 'filter_list_excel_tv_sdm') {
+            return redirect()->route('list_excel_tv_sdm');
+        }
         return redirect()->route('verifikasi_tv_sdm');
     }
 }

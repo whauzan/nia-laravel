@@ -35,6 +35,7 @@
                         <th scope="col">Beban Perusahaan</th>
                         <th scope="col">Tagihan</th>
                         <th scope="col">Tanggal</th>
+                        <th></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -61,13 +62,14 @@
                                                 $tanggal = date('d-m-Y', strtotime($s->tanggal));
                                             @endphp
                                            <td>{{$tanggal}}</td>
+                                           <td><a href="{{ route("pulsa_delete_sdm", $s->idDataPulsa) }}" class="btn btn-primary">Hapus</a></td>
                                         </tr>
                                     @endforeach
                     </tbody>
                   </table>
 
                    <div class="text-right">
-                   <a href="/upload_file_excel_master_data_pulsa_sdm"> <button type="submit" class="btn btn-primary" data-toggle="modal">Import Data Excel </button></a></a>
+                   <a href="{{ route("import_pulsa_sdm") }}"> <button type="submit" class="btn btn-primary" data-toggle="modal">Import Data Excel </button></a></a>
                   </div>
 
                 </div>

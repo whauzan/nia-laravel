@@ -34,6 +34,7 @@
                         <th scope="col">Beban Perusahaan</th>
                         <th scope="col">Keterengan</th>
                         <th scope="col">Tanggal</th>
+                        <th></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -59,6 +60,7 @@
                                                 $tanggal = date('d-m-Y', strtotime($s->tanggal));
                                             @endphp
                                            <td>{{$tanggal}}</td>
+                                           <td><a href="{{ route("pam_delete_sdm", $s->idDataPam) }}" class="btn btn-primary">Hapus</a></td>
                                         </tr>
                                     @endforeach
                     </tbody>

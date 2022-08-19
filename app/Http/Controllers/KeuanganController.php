@@ -22,6 +22,7 @@ use App\Imports\PulsaImport;
 use App\Models\Listrik;
 use App\Models\PAM;
 use App\Models\Pulsa;
+use App\Models\User;
 
 class KeuanganController extends Controller
 {
@@ -33,7 +34,25 @@ class KeuanganController extends Controller
 
     public function profilKeuangan()
     {
-        return view('Keuangan.profil_keuangan');
+        $user = auth()->user();
+        return view('Keuangan.profil_keuangan', [
+            'user' => $user
+        ]);
+    }
+
+    public function editProfil() {
+        $user = auth()->user();
+        return view('Keuangan.profile_edit', [
+            'user' => $user
+        ]);
+    }
+
+    public function updateProfil(Request $request) {
+        $user = User::where('id', $request->oldId)->first();
+        $user->name = $request->name;
+        $user->id = $request->id;
+        $user->save();
+        return redirect()->route('profil_keuangan');
     }
 
     public function listListrik()

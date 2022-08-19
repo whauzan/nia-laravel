@@ -35,6 +35,8 @@ Route::prefix('sdm')
     ->middleware(['auth', 'adminsdm'])
     ->group(function(){
         Route::get('/profil', [SDMController::class, 'profil'])->name('profil_sdm');
+        Route::get('/profil/edit', [SDMController::class, 'editProfil'])->name('profil_sdm_edit');
+        Route::post('/profil/edit', [SDMController::class, 'updateProfil'])->name('profil_sdm_update');
 
         Route::get('/internet/add', [SDMController::class, 'addInternet'])->name('add_internet_sdm');
         Route::post('/internet/add/confirm', [SDMController::class, 'confirmAddInternet'])->name('confirm_add_internet_sdm');
@@ -118,6 +120,8 @@ Route::prefix('it')
     ->middleware(['auth', 'adminit'])
     ->group(function(){
         Route::get('/profil', [ITController::class, 'profilIT'])->name('profil_IT');
+        Route::get('/profil/edit', [ITController::class, 'editProfil'])->name('profil_IT_edit');
+        Route::post('/profil/edit', [ITController::class, 'updateProfil'])->name('profil_IT_update');
         
         Route::get('/list-excel-pulsa', [ITController::class, 'listPulsa'])->name('list_excel_pulsa_IT');
         Route::get('/list-excel-pulsa/{filter}', [ITController::class, 'filterPulsa'])->name('filter_list_excel_pulsa_IT');
@@ -139,6 +143,8 @@ Route::prefix('keuangan')
     ->middleware(['auth', 'adminkeuangan'])
     ->group(function(){
         Route::get('/profil', [KeuanganController::class, 'profilKeuangan'])->name('profil_keuangan');
+        Route::get('/profil/edit', [KeuanganController::class, 'editProfil'])->name('profil_keuangan_edit');
+        Route::post('/profil/edit', [KeuanganController::class, 'updateProfil'])->name('profil_keuangan_update');
         
         Route::get('/list-excel-listrik', [KeuanganController::class, 'listListrik'])->name('list_excel_listrik_keuangan');
         Route::get('/list-excel-listrik/{filter}', [KeuanganController::class, 'filterListrik'])->name('filter_list_excel_listrik_keuangan');
